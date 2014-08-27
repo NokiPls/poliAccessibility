@@ -13,25 +13,7 @@
 
 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
-<script type="text/javascript">
-	function Facebook() {
-		FB.init({
-			appId : '279105595599278',
-			cookie : true,
-			status : true,
-			xfbml : true
-		});
-	}
-	window.onload = Facebook;
 
-	function logoutFacebook() {
-		FB.logout(function(response) {
-			console.log("Here logout response", response);
-			document.getElementById("disconnectionForm").submit();
-
-		});
-	}
-</script>
 </head>
 <body>
 	<div id="header-wrapper">
