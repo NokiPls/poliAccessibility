@@ -11,7 +11,7 @@
 
 	<bean id="dataSourceJpa" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/fbanalytics" />
+		<property name="url" value="jdbc:mysql://localhost:3306/access" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
@@ -26,7 +26,7 @@
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSourceJpa" />
-		<property name="packagesToScan" value="com.lgnm.fb.domain" />
+		<property name="packagesToScan" value="com.access.domain" />
 		<property name="persistenceUnitName" value="Friend" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 	</bean>

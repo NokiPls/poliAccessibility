@@ -1,3 +1,4 @@
+package com.access.repository;
 //package com.lgnm.fb.repository;
 //
 //import java.util.List;
