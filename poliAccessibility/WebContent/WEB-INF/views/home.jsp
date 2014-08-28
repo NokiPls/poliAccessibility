@@ -17,7 +17,7 @@
 	<div id="header-wrapper">
 		<div id="header" class="container">
 			<div id="logo">
-				<img src="<c:url value="/img/glasses.jpg"/>" class="imageborder">
+				<img src="<c:url value="/img/glasses.jpg"/>" height="100" width="100" class="imageborder">
 				<h1>
 					<a href="/gmfb">Facilitate</a>
 				</h1>

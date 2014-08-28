@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 
 @Controller
-@ComponentScan("com.lgnm.fb.services")
+@ComponentScan("com.access.services")
 public class HomeController {
 
 
-	@Autowired
+//	@Autowired
 	public HomeController() {
 	}
 
@@ -26,6 +26,7 @@ public class HomeController {
 	public String home(Model model) {
 		return "home";
 	}
+	
 	@RequestMapping(value = "aboutUs", method = RequestMethod.GET)
 	public String aboutUs(Model model) {
 		return "aboutUs";

@@ -44,7 +44,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		return resolver;
     }
 	
-	private @Inject
-	UsersConnectionRepository usersConnectionRepository;
+//	private @Inject
+//	UsersConnectionRepository usersConnectionRepository;
 
 }
