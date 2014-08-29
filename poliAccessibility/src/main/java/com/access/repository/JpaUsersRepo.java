@@ -25,6 +25,7 @@ public class JpaUsersRepo implements UsersRepository {
 	@Override
 	@Transactional
 	public void addUser(User user) {
+		em.persist(user);
 //		int i;
 //		for (i = 0; i < commonFriendsList.size(); i++) {
 //			em.merge(commonFriendsList.get(i));
