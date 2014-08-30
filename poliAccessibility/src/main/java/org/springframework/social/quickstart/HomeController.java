@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.access.domain.Product;
+import com.access.domain.User;
+import com.access.services.UserManagerInterface;
 
 /**
  * The main controller for the application.
@@ -23,9 +25,11 @@ import com.access.domain.Product;
 public class HomeController {
 
 	List<Product> products = new ArrayList<Product>();
+	UserManagerInterface um;
 
-	// @Autowired
-	public HomeController() {
+	@Autowired
+	public HomeController(UserManagerInterface um) {
+		this.um = um;
 	}
 
 	// Home
@@ -34,7 +38,7 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "aboutUs", method = RequestMethod.GET)
+	@RequestMapping(value = "/aboutUs", method = RequestMethod.GET)
 	public String aboutUs(Model model) {
 		return "aboutUs";
 	}
@@ -81,11 +85,30 @@ public class HomeController {
 		return "product";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model) {
-		return "login";
+	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
+	public String loginForm(Model model) {
+		return "loginForm";
 	}
-	
+
+	/**
+	 * Questa è la risposta a una form, di cui van presi UserID e psw
+	 * 
+	 */
+	// @RequestMapping(value = "/login", method = RequestMethod.POST)
+	// public String login(Model model) {
+	//
+	// User user = um.getUser(uid);
+	// if (user.equals(null)){
+	// return "userNotFound";
+	// } else {
+	// if (!user.getPsw().equals(psw)){
+	// return "incorrect";
+	// } else {
+	// return "login";
+	// }
+	// }
+	// }
+
 	@RequestMapping(value = "/buy", method = RequestMethod.GET)
 	public String buy(Model model) {
 		return "buy";

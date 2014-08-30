@@ -26,10 +26,14 @@ public class JpaUsersRepo implements UsersRepository {
 	@Transactional
 	public void addUser(User user) {
 		em.persist(user);
-//		int i;
-//		for (i = 0; i < commonFriendsList.size(); i++) {
-//			em.merge(commonFriendsList.get(i));
-//		}
+		// int i;
+		// for (i = 0; i < commonFriendsList.size(); i++) {
+		// em.merge(commonFriendsList.get(i));
+		// }
+	}
+
+	public User findUser(String uid) {
+		return em.find(User.class, uid);
 	}
 
 }
