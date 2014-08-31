@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -11,9 +15,9 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-wide.css" />
+			<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+			<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+			<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 		</noscript>
 	</head>
 	<body>
@@ -34,7 +38,7 @@
 								<ul>
 									
 									<li>
-										<a href="">disabilità visiva</a>
+										<a href="">disabilitÃ  visiva</a>
 										<ul>
 											<li><a href="#">ingranditori</a></li>
 											<li><a href="#">stampanti braile</a></li>
@@ -43,7 +47,7 @@
 									</li>
 								
 							</li>
-							<li><a href="left-sidebar.html">disabilità motoria</a></li>
+							<li><a href="left-sidebar.html">disabilitÃ  motoria</a></li>
 						</ul>
 					</nav>
 

@@ -33,6 +33,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 	    registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
 	    registry.addResourceHandler("/img/**").addResourceLocations("/WEB-INF/img/");
+	    registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/fonts/");
+	    registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
 
 	}
 
