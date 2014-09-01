@@ -2,55 +2,109 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>Personal Profile</title>
-<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-<link href="<c:url value="/css/fonts.css" />" rel="stylesheet">
-<link
-	href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
-	rel="stylesheet" />
-
-
+<title>Homepage</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.dropotron.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-layers.min.js"></script>
+<script src="js/init.js"></script>
+<noscript>
+	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+</noscript>
 </head>
 <body>
-	<div id="header-wrapper">
-		<div id="header" class="container">
-			<div id="logo">
-				<img src="<c:url value="/img/glasses.jpg"/>" height="100" width="100" class="imageborder">
-				<h1>
-					<a href="/gmfb">Facilitate</a>
-				</h1>
-				<div id="menu">
+
+	<!-- Header  ho modificato div in header e aggiunto il ruolo-->
+	<div id="header">
+
+		<!-- Logo  aggiunta nav-->
+		<header role="banner">
+			<h1>
+				<a href="index.html" id="logo">E-commerce <em>accessibility</em></a>
+			</h1>
+		</header>
+		<!-- Nav -->
+		<nav id="nav" role="navigation">
+			<ul>
+				<li class="current"><a href="index.html">Homepage</a></li>
+				<li><a href="">Prodotti</a>
 					<ul>
-						<li class="active"><a href="/gmfb" title="">Nome Utente
-						</a></li>
-						<li><a href="aboutUs" title="">About Us</a></li>
-						<li><a href="javascript:logoutFacebook()">Disconnect</a></li>
-					</ul>
-				</div>
-			</div>
+
+						<li><a href="">disabilitÃ  visiva</a>
+							<ul>
+								<li><a href="#">ingranditori</a></li>
+								<li><a href="#">stampanti braile</a></li>
+								<li><a href="#">lettori</a></li>
+							</ul></li></li>
+				<li><a href="left-sidebar.html">disabilitÃ  motoria</a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<!-- Main -->
+	<div class="wrapper style1">
+		<div class="container">
+			<section id="content" role="main">
+
+				<!-- Content -->
+
+				<article role=article>
+					<header>
+						<h2>Accessible E-commerce</h2>
+						<p>accessibility project</p>
+					</header>
+
+					<span class="image featured"><img src="images/download.jpg"
+						alt="Always provide alt text for accessibility ;-)" /></span>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa
+						eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem
+						felis, ultricies a bibendum id, bibendum sit amet nisl. Mauris et
+						lorem quam. Maecenas rutrum imperdiet vulputate. Nulla quis nibh
+						ipsum, sed egestas justo. Morbi ut ante mattis orci convallis
+						tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan
+						odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis
+						euismod. Maecenas lorem tellus, congue et condimentum ac,
+						ullamcorper non sapien. Donec sagittis massa et leo semper a
+						scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed
+						nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
+</p><p>
+						Phasellus odio risus, faucibus et viverra vitae, eleifend ac
+						purus. Praesent mattis, enim quis hendrerit porttitor, sapien
+						tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
+						Suspendisse laoreet metus ut metus imperdiet interdum aliquam
+						justo tincidunt. Mauris dolor urna, fringilla vel malesuada ac,
+						dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
+						Maecenas tortor mauris, consectetur pellentesque dapibus eget,
+						tincidunt vitae arcu. Vestibulum purus augue, tincidunt sit amet
+						iaculis id, porta eu purus.</p>
+
+
+				</article>
+			</section>
 		</div>
-
 	</div>
-	<div id="page-wrapper">
 
-		<div class="title">
-			<h2>Personal Profile</h2>
-		</div>
-		
-		<form id="disconnectionForm"
-			action="${pageContext.request.contextPath}/signout">
-			<a href="friendsList" class="button">See your friends</a> <input
-				type="hidden" name="_method" value="delete">
 
-		</form>
+	<!-- Footer -->
 
+	<div id="footer">
+		<footer class="copyright" role="contentinfo">
+
+			<p>Accessibility project 2013/14</p>
+
+		</footer>
 	</div>
-	<div class="wrapper"></div>
-	<div id="copyright" class="container">
-		<p>POLIMI - Advanced Web Technology</p>
 
-	</div>
 </body>
 </html>

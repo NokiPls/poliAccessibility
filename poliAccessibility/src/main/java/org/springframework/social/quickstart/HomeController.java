@@ -39,7 +39,7 @@ public class HomeController {
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
-		return "prova";
+		return "home";
 	}
 
 	@RequestMapping(value = "/aboutUs", method = RequestMethod.GET)

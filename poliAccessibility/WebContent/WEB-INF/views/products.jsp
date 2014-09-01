@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>No Sidebar - Arcana by HTML5 UP</title>
+		<title>Products</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -32,9 +32,8 @@
 				<!-- Nav -->
 					<nav id="nav" role="navigation">
 						<ul>
-							<li class="current"><a href="index.html">Homepage</a></li>
-							<li>
-								<a href="">Prodotti</a>
+							<li><a href="index.html">Homepage</a></li>
+							<li class="current"><a href="">Prodotti</a>
 								<ul>
 									
 									<li>
