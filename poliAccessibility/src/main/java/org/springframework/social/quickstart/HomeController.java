@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.access.domain.Product;
 import com.access.domain.User;
+import com.access.services.ProductsFinderInterface;
 import com.access.services.UserManagerInterface;
 
 /**
@@ -24,12 +25,15 @@ import com.access.services.UserManagerInterface;
 @ComponentScan("com.access.services")
 public class HomeController {
 
-	List<Product> products = new ArrayList<Product>();
-	UserManagerInterface um;
+	private List<Product> products = new ArrayList<Product>();
+	private UserManagerInterface um;
+	private ProductsFinderInterface pf;
 
 	@Autowired
-	public HomeController(UserManagerInterface um) {
+	public HomeController(UserManagerInterface um, ProductsFinderInterface pf) {
 		this.um = um;
+		this.pf = pf;
+		this.pf.init();
 	}
 
 	// Home

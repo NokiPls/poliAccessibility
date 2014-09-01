@@ -15,8 +15,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "product")
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -7693936929469050335L;
