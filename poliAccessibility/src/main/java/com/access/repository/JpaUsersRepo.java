@@ -32,8 +32,8 @@ public class JpaUsersRepo implements UsersRepository {
 		// }
 	}
 
-	public User findUser(String uid) {
-		return em.find(User.class, uid);
+	public User findUser(String id) {
+		return em.find(User.class, id);
 	}
 
 }

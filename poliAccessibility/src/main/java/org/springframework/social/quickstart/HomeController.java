@@ -98,20 +98,21 @@ public class HomeController {
 	 * Questa è la risposta a una form, di cui van presi UserID e psw
 	 * 
 	 */
-	// @RequestMapping(value = "/login", method = RequestMethod.POST)
-	// public String login(Model model) {
-	//
-	// User user = um.getUser(uid);
-	// if (user.equals(null)){
-	// return "userNotFound";
-	// } else {
-	// if (!user.getPsw().equals(psw)){
-	// return "incorrect";
-	// } else {
-	// return "login";
-	// }
-	// }
-	// }
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(Model model, @RequestParam(value = "id") String id,
+			@RequestParam(value = "psw") String psw) {
+
+		User user = um.getUser(id);
+		if (user.equals(null)) {
+			return "userNotFound";
+		} else {
+			if (!user.getPsw().equals(psw)) {
+				return "incorrect";
+			} else {
+				return "login";
+			}
+		}
+	}
 
 	@RequestMapping(value = "/buy", method = RequestMethod.GET)
 	public String buy(Model model) {

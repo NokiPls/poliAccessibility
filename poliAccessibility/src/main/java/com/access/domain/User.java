@@ -23,7 +23,7 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String uid;
+	private String id;
 
 	public User() {
 	}
@@ -77,12 +77,12 @@ public class User implements Serializable {
 		this.ccexp = ccexp;
 	}
 
-	public String getUid() {
-		return uid;
+	public String getId() {
+		return id;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getPsw() {
