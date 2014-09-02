@@ -1,26 +1,11 @@
 package com.access.domain;
 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.Serializable;
 
-import javax.imageio.ImageIO;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-@Entity
-@Table(name = "product")
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -7693936929469050335L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+
 	private Long id;
 	private String name;
 	private String briefDescription;
@@ -30,18 +15,6 @@ public class Product implements Serializable {
 	private String specs;
 	private String category;
 	private String imageURL;
-//	private byte[] imageURL;
-//
-//    public BufferedImage getImage() {
-//        InputStream in = new ByteArrayInputStream(imageBytes);
-//        return ImageIO.read(in);
-//    }
-//
-//    public void setImage(BufferedImage image) {
-//        BufferedOutputStream out = new ByteArrayOutputStream();
-//        ImageIO.write(image, "PNG" /* for instance */, out);
-//        imageBytes = out.toByteArray();
-//    }
 
 	public String getBriefDescription() {
 		return briefDescription;
