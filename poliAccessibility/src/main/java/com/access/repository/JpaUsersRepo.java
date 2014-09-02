@@ -37,7 +37,7 @@ public class JpaUsersRepo implements UsersRepository {
 	}
 
 	public Person findUser(String userName) {
-		Query query = em.createQuery("from ourUser where userName = :userName ");
+		Query query = em.createQuery("from com.access.domain.Person where userName = :userName ");
 		query.setParameter("userName", userName);
 		List<Person> list = query.getResultList();
 		Person p = list.get(0);

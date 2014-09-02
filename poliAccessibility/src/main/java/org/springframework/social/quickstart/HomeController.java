@@ -39,8 +39,10 @@ public class HomeController {
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
-		Person user = new Person(/*Dati estratti dalla form*/);
-		um.saveUser(user);
+//		Person user = new Person(/*Dati estratti dalla form*/);
+//		um.saveUser(user);
+//		Person user2 = um.getUser("lol");
+//		System.out.println("LOL"+ user2.getUserName());
 		return "home";
 	}
 
