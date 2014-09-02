@@ -38,14 +38,14 @@
 				<li><a href="">Products</a>
 					<ul>
 
-						<li><a href="/category">Vision Impaired</a>
+						<li><a href="${pageContext.request.contextPath}/category?category=vision">Vision Impaired</a>
 							<ul>
-								<li><a href="/category">Braille Displays</a></li>
-								<li><a href="/category">Braille Embossers</a></li>
-								<li><a href="/category">Screen Magnification</a></li>
-								<li><a href="/category">Screen Readers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille Displays</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille Embossers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Screen Magnification</a></li>
+								<li><a href="${pageContext.request.contextPath}/category?category=reader">Screen Readers</a></li>
 							</ul></li></li>
-				<li><a href="/contactUs">Autism</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
 			</ul>
 			<li><a href="index.html">Contact Us</a></li>
 		</nav>

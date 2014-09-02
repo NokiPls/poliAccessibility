@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Products</title>
+<title>Homepage</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -34,18 +34,20 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="index.html">Homepage</a></li>
-				<li class="current"><a href="">Prodotti</a>
+				<li><a href="/">Homepage</a></li>
+				<li class="current"><a href="">Products</a>
 					<ul>
 
-						<li><a href="">disabilitÃ  visiva</a>
+						<li><a href="/category">Vision Impaired</a>
 							<ul>
-								<li><a href="#">ingranditori</a></li>
-								<li><a href="#">stampanti braile</a></li>
-								<li><a href="#">lettori</a></li>
+								<li><a href="/category">Braille Displays</a></li>
+								<li><a href="/category">Braille Embossers</a></li>
+								<li><a href="/category">Screen Magnification</a></li>
+								<li><a href="/category">Screen Readers</a></li>
 							</ul></li></li>
-				<li><a href="left-sidebar.html">disabilitÃ  motoria</a></li>
+				<li><a href="/category">Autism</a></li>
 			</ul>
+			<li><a href="/contactUs">Contact Us</a></li>
 		</nav>
 
 	</div>
@@ -56,44 +58,22 @@
 			<section id="content" role="main">
 
 				<!-- Content -->
+				<c:forEach var="i" items="${product}" varStatus="status">
+					<article role=article>
+						<header>
+							<h2><c:out value="${i.name}"></c:out></h2>
+							<p><c:out value="${i.briefDescription}"></c:out></p>
+						</header>
 
-				<article role=article>
-					<header>
-						<h2>${facebookProfile.name}</h2>
-						<p>${facebookProfile.id}</p>
-					</header>
-					<fieldset>
-						<legend>Your Favorite Color</legend>
-						<input type=”radio” name=”favoritecolor” value=”blue” id=”blue”>
-						<label for=”blue”>Blue</label> <input type=”radio”
-							name=”favoritecolor” value=”green” id=”green”> <label
-							for=”green”>Green</label> <input type=”radio”
-							name=”favoritecolor” value=”purple” id=”purple”> <label
-							for=”purple”>Purple</label>
-					</fieldset>
-					<form action="somescript.php">
-						<fieldset>
-							<legend>Name</legend>
-							<p>
-								First name <input name="firstName">
-							</p>
-							<p>
-								Last name <input name="lastName">
-							</p>
-						</fieldset>
-						<fieldset>
-							<legend>Address</legend>
-							<p>
-								Address
-								<textarea name="address"></textarea>
-							</p>
-							<p>
-								Postal code <input name="postcode">
-							</p>
-						</fieldset>
-						</form>
-				</article>
+						<span class="image featured"><img src="<c:out value="${i.imageURL}"></c:out>"
+							alt="Always provide alt text for accessibility ;-)" /></span>
+							
 
+						<p><c:out value="${i.longDescription}"></c:out></p>
+
+
+					</article>
+				</c:forEach>
 			</section>
 		</div>
 	</div>
