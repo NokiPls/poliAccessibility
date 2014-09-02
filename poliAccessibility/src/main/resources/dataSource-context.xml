@@ -20,14 +20,14 @@
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 		<property name="database" value="MYSQL" />
 		<property name="showSql" value="true" />
-		<property name="generateDdl" value="true" />
+		<property name="generateDdl" value="true" />		
 	</bean>
 
 	<bean id="emf"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSourceJpa" />
 		<property name="packagesToScan" value="com.access.domain" />
-		<property name="persistenceUnitName" value="User" />
+		<property name="persistenceUnitName" value="Person" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 	</bean>
 

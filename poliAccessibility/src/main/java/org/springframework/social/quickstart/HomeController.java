@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.access.domain.Product;
-import com.access.domain.User;
+import com.access.domain.Person;
 import com.access.services.ProductsFinderInterface;
 import com.access.services.UserManagerInterface;
 
@@ -39,6 +39,8 @@ public class HomeController {
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
+		Person user = new Person(/*Dati estratti dalla form*/);
+		um.saveUser(user);
 		return "home";
 	}
 
@@ -48,10 +50,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
-	public String userRegistration(
-			@RequestParam(value = "id[]", required = true) String[] idSelected,
-			Model model) {
-
+	public String userRegistration(Model model) {
+		Person user = new Person(/*Dati estratti dalla form*/);
+		um.saveUser(user);
 		return "userRegistration";
 	}
 
@@ -63,12 +64,6 @@ public class HomeController {
 		return "category";
 	}
 
-	/*
-	 * // Le sottocategorie sono hard coded.
-	 * 
-	 * @RequestMapping(value = "/subcategory", method = RequestMethod.GET)
-	 * public String subcateg(Model model) { return "subcategory"; }
-	 */
 	// Prodotti di una categoria
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(Model model) {
@@ -101,14 +96,15 @@ public class HomeController {
 	 * 
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Model model, @RequestParam(value = "id") String id,
+	public String login(Model model,
+			@RequestParam(value = "userName") String userName,
 			@RequestParam(value = "psw") String psw) {
 
-		User user = um.getUser(id);
+		Person user = um.getUser(userName);
 		if (user.equals(null)) {
 			return "userNotFound";
 		} else {
-			if (!user.getPsw().equals(psw)) {
+			if (!user.getPassw().equals(psw)) {
 				return "incorrect";
 			} else {
 				return "login";

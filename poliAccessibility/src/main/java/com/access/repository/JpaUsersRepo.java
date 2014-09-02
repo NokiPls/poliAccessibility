@@ -1,13 +1,17 @@
 package com.access.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Repository;
 
-import com.access.domain.User;
+import com.access.domain.Person;
+
 
 /**
  * Implementation of the DAO. The configuration for the entity manager is
@@ -24,7 +28,7 @@ public class JpaUsersRepo implements UsersRepository {
 
 	@Override
 	@Transactional
-	public void addUser(User user) {
+	public void addUser(Person user) {
 		em.persist(user);
 		// int i;
 		// for (i = 0; i < commonFriendsList.size(); i++) {
@@ -32,8 +36,12 @@ public class JpaUsersRepo implements UsersRepository {
 		// }
 	}
 
-	public User findUser(String id) {
-		return em.find(User.class, id);
+	public Person findUser(String userName) {
+		Query query = em.createQuery("from ourUser where userName = :userName ");
+		query.setParameter("userName", userName);
+		List<Person> list = query.getResultList();
+		Person p = list.get(0);
+		return p;
 	}
 
 }

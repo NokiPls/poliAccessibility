@@ -1,10 +1,10 @@
 package com.access.services;
 
-import com.access.domain.User;
+import com.access.domain.Person;
 
 public interface UserManagerInterface {
 	
-	public void saveUser(User user);
+	public void saveUser(Person user);
 
-	public User getUser(String uid);
+	public Person getUser(String uid);
 }

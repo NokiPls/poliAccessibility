@@ -1,40 +1,40 @@
 package com.access.domain;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
-public class User implements Serializable {
+public class Person implements Serializable{
+	
+	private static final long serialVersionUID = -9015553498567114557L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long oid;
 
-	private static final long serialVersionUID = 1716161538686048577L;
 	private String name;
 	private String surname;
 	private String address;
 	private int ccn;
-	private Date ccexp;
-	private String psw;
+	private String ccexp;
+	private String userName;
+	private String passw;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
 
-	public User() {
+	public Person() {
 	}
 	
-	public User(String name, String surname, String address, int ccn, Date ccexp, String psw) {
+	public Person(String name, String surname, String address, int ccn, String ccexp, String passw) {
 		this.name = name;
 		this.surname = surname;
 		this.address = address;
 		this.ccn = ccn;
 		this.ccexp = ccexp;
-		this.psw = psw;
+		this.passw = passw;
 	}
 
 	public String getName() {
@@ -69,27 +69,27 @@ public class User implements Serializable {
 		this.ccn = ccn;
 	}
 
-	public Date getCcexp() {
+	public String getCcexp() {
 		return ccexp;
 	}
 
-	public void setCcexp(Date ccexp) {
+	public void setCcexp(String ccexp) {
 		this.ccexp = ccexp;
 	}
 
-	public String getId() {
-		return id;
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassw() {
+		return passw;
+	}
+	public void setPassw(String passw) {
+		this.passw = passw;
 	}
 
-	public String getPsw() {
-		return psw;
-	}
-
-	public void setPsw(String psw) {
-		this.psw = psw;
-	}
 }

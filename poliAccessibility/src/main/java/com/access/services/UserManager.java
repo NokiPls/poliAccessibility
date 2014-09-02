@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.access.domain.User;
+import com.access.domain.Person;
 import com.access.repository.UsersRepository;
 
 @Service
@@ -17,12 +17,12 @@ public class UserManager implements UserManagerInterface {
 	public UsersRepository repo;
 	
 	@Override
-	public void saveUser(User user) {
+	public void saveUser(Person user) {
 		repo.addUser(user);
 	}
 	
 	@Override
-	public User getUser(String uid){
+	public Person getUser(String uid){
 		return repo.findUser(uid);
 	}
 	

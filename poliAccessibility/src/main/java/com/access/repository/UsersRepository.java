@@ -1,6 +1,7 @@
 package com.access.repository;
 
-import com.access.domain.User;
+import com.access.domain.Person;
+
 
 /**
  * Interface for the DAO
@@ -9,8 +10,8 @@ import com.access.domain.User;
 
 public interface UsersRepository {
 
-	public void addUser(User user);
+	public void addUser(Person user);
 
-	public User findUser(String uid);
+	public Person findUser(String uid);
 
 }
