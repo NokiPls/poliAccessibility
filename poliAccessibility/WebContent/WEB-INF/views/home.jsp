@@ -34,18 +34,20 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li class="current"><a href="index.html">Homepage</a></li>
-				<li><a href="">Prodotti</a>
+				<li class="current"><a href="/">Homepage</a></li>
+				<li><a href="">Products</a>
 					<ul>
 
-						<li><a href="">disabilitÃ  visiva</a>
+						<li><a href="/category">Vision Impaired</a>
 							<ul>
-								<li><a href="#">ingranditori</a></li>
-								<li><a href="#">stampanti braile</a></li>
-								<li><a href="#">lettori</a></li>
+								<li><a href="#">Braille Displays</a></li>
+								<li><a href="#">Braille Embossers</a></li>
+								<li><a href="#">Screen Magnification</a></li>
+								<li><a href="#">Screen Readers</a></li>
 							</ul></li></li>
-				<li><a href="left-sidebar.html">disabilitÃ  motoria</a></li>
+				<li><a href="left-sidebar.html">Autism</a></li>
 			</ul>
+			<li><a href="index.html">Contact Us</a></li>
 		</nav>
 
 	</div>
@@ -77,9 +79,8 @@
 						euismod. Maecenas lorem tellus, congue et condimentum ac,
 						ullamcorper non sapien. Donec sagittis massa et leo semper a
 						scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed
-						nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
-</p><p>
-						Phasellus odio risus, faucibus et viverra vitae, eleifend ac
+						nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
+					<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac
 						purus. Praesent mattis, enim quis hendrerit porttitor, sapien
 						tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
 						Suspendisse laoreet metus ut metus imperdiet interdum aliquam
