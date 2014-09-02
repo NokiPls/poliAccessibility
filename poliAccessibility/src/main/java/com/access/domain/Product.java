@@ -26,6 +26,7 @@ public class Product implements Serializable {
 	private String price;
 	private String linkVideo;
 	private String specs;
+	private String category;
 //	private byte[] imageURL;
 //
 //    public BufferedImage getImage() {
@@ -93,5 +94,13 @@ public class Product implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 }

@@ -57,18 +57,18 @@ public class HomeController {
 
 	// Le categorie sono hard coded.
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
-	public String categ(Model model, @RequestParam(value = "category") String category) {
-		//inserisci nel modello solo i prodotti relativi a category
-		
+	public String categ(Model model,
+			@RequestParam(value = "category") String category) {
+		model.addAttribute("product", pf.findProducts(category));
 		return "category";
 	}
-/*
-	// Le sottocategorie sono hard coded.
-	@RequestMapping(value = "/subcategory", method = RequestMethod.GET)
-	public String subcateg(Model model) {
-		return "subcategory";
-	}
-*/
+
+	/*
+	 * // Le sottocategorie sono hard coded.
+	 * 
+	 * @RequestMapping(value = "/subcategory", method = RequestMethod.GET)
+	 * public String subcateg(Model model) { return "subcategory"; }
+	 */
 	// Prodotti di una categoria
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(Model model) {
