@@ -14,11 +14,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+@Entity
+@Table(name = "product")
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -7693936929469050335L;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String briefDescription;
@@ -27,6 +29,7 @@ public class Product implements Serializable {
 	private String linkVideo;
 	private String specs;
 	private String category;
+	private String imageURL;
 //	private byte[] imageURL;
 //
 //    public BufferedImage getImage() {
@@ -102,5 +105,13 @@ public class Product implements Serializable {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
 	}
 }
