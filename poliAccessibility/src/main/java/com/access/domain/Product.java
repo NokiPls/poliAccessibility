@@ -26,7 +26,7 @@ public class Product implements Serializable {
 	private String price;
 	private String linkVideo;
 	private String specs;
-//	private byte[] imageBytes;
+//	private byte[] imageURL;
 //
 //    public BufferedImage getImage() {
 //        InputStream in = new ByteArrayInputStream(imageBytes);
