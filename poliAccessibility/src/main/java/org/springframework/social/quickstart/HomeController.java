@@ -43,10 +43,6 @@ public class HomeController {
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
-		// Person user = new Person(/*Dati estratti dalla form*/);
-		// um.saveUser(user);
-		// Person user2 = um.getUser("lol");
-		// System.out.println("LOL"+ user2.getUserName());
 		return "home";
 	}
 
@@ -71,7 +67,33 @@ public class HomeController {
 		if (um.getUserByUserName(personForm.getUserName()) == null) {
 			um.saveUser(personForm);
 		} else {
-			System.out.println("LOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			System.out.println("Duplicate userName found !!!");
+		}
+		return "home";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		model.addAttribute("personForm", new Person());
+		return "login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(@Valid @ModelAttribute Person personForm,
+			BindingResult result, Model model) {
+//		if (result.hasErrors()) {
+//			model.addAttribute("personForm", new Person());
+//			return "login";
+//		}
+		Person p = um.getUserByUserName(personForm.getUserName());
+		if (p == null) {
+			System.out.println("User not found");
+		} else {
+			if (p.getPassw().equals(personForm.getPassw())) {
+				System.out.println("Peeeeeeeeeeeeeeeerifetto!!");
+			} else {
+				System.out.println("Password Errata");
+			}
 		}
 		return "home";
 	}
@@ -104,32 +126,6 @@ public class HomeController {
 		// ...
 		model.addAttribute("product", products.get(i));
 		return "product";
-	}
-
-	@RequestMapping(value = "/loginForm", method = RequestMethod.GET)
-	public String loginForm(Model model) {
-		return "loginForm";
-	}
-
-	/**
-	 * Questa è la risposta a una form, di cui van presi UserID e psw
-	 * 
-	 */
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Model model,
-			@RequestParam(value = "userName") String userName,
-			@RequestParam(value = "psw") String psw) {
-
-		Person user = um.getUserByUserName(userName);
-		if (user.equals(null)) {
-			return "userNotFound";
-		} else {
-			if (!user.getPassw().equals(psw)) {
-				return "incorrect";
-			} else {
-				return "login";
-			}
-		}
 	}
 
 	@RequestMapping(value = "/buy", method = RequestMethod.GET)
