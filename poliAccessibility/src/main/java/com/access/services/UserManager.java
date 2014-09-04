@@ -22,8 +22,8 @@ public class UserManager implements UserManagerInterface {
 	}
 	
 	@Override
-	public Person getUser(String uid){
-		return repo.findUser(uid);
+	public Person getUser(String name){
+		return repo.findUser(name);
 	}
 	
 }

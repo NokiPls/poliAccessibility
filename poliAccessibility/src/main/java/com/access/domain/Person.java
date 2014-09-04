@@ -2,6 +2,7 @@ package com.access.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +20,7 @@ public class Person implements Serializable{
 	private Long oid;
 	@NotNull
 	@Size(min=2)
+	@Column(unique=true)
 	private String name;
 	@NotNull
 	@Size(min=2)

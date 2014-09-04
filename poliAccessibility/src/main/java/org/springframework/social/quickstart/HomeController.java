@@ -43,10 +43,10 @@ public class HomeController {
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
-//		Person user = new Person(/*Dati estratti dalla form*/);
-//		um.saveUser(user);
-//		Person user2 = um.getUser("lol");
-//		System.out.println("LOL"+ user2.getUserName());
+		// Person user = new Person(/*Dati estratti dalla form*/);
+		// um.saveUser(user);
+		// Person user2 = um.getUser("lol");
+		// System.out.println("LOL"+ user2.getUserName());
 		return "home";
 	}
 
@@ -55,23 +55,27 @@ public class HomeController {
 		return "aboutUs";
 	}
 
-
-	@RequestMapping(value="/userRegistration", method=RequestMethod.GET)
+	@RequestMapping(value = "/userRegistration", method = RequestMethod.GET)
 	public String showForm(Model model) {
-	    model.addAttribute("personForm", new Person());
-	    return "registration";
+		model.addAttribute("personForm", new Person());
+		return "registration";
 	}
 
-	@RequestMapping(value="/addPerson", method=RequestMethod.POST)
-	public String savePersonPost(@Valid @ModelAttribute Person personForm, BindingResult result, Model model) {
-	   if(result.hasErrors()) {
-	       model.addAttribute("personForm",  new Person());
-	       return "registration";
-	   }
-	   System.out.println(personForm.getName() + " " + personForm.getSurname());
-	   //Person user = new Person(/*Dati estratti dalla form*/);
-	 	//um.saveUser(user);
-	   return "home";
+	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
+	public String savePersonPost(@Valid @ModelAttribute Person personForm,
+			BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("personForm", new Person());
+			return "registration";
+		}
+		System.out
+				.println(personForm.getName() + " " + personForm.getSurname());
+		if (um.getUser(personForm.getName()) == null) {
+			um.saveUser(personForm);
+		} else {
+			System.out.println("LOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		}
+		return "home";
 	}
 
 	// Le categorie sono hard coded.

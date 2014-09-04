@@ -1,5 +1,6 @@
 package com.access.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -23,6 +24,8 @@ import com.access.domain.Person;
 @Repository
 public class JpaUsersRepo implements UsersRepository {
 
+	List<Person> list;
+	
 	@PersistenceContext
 	public EntityManager em;
 
@@ -36,10 +39,15 @@ public class JpaUsersRepo implements UsersRepository {
 		// }
 	}
 
-	public Person findUser(String userName) {
-		Query query = em.createQuery("from com.access.domain.Person where userName = :userName ");
-		query.setParameter("userName", userName);
-		List<Person> list = query.getResultList();
+	@Override
+	public Person findUser(String name) {
+		list = new ArrayList<Person>();
+		Query query = em.createQuery("from com.access.domain.Person where name = :name ");
+		query.setParameter("name", name);
+		list = query.getResultList();
+		if (list.isEmpty()){
+			return null;
+		}
 		Person p = list.get(0);
 		return p;
 	}

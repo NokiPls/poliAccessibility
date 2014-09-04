@@ -6,5 +6,5 @@ public interface UserManagerInterface {
 	
 	public void saveUser(Person user);
 
-	public Person getUser(String uid);
+	public Person getUser(String name);
 }
