@@ -3,10 +3,14 @@ package org.springframework.social.quickstart;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,11 +55,23 @@ public class HomeController {
 		return "aboutUs";
 	}
 
-	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
-	public String userRegistration(Model model) {
-		Person user = new Person(/*Dati estratti dalla form*/);
-		um.saveUser(user);
-		return "userRegistration";
+
+	@RequestMapping(value="/userRegistration", method=RequestMethod.GET)
+	public String showForm(Model model) {
+	    model.addAttribute("personForm", new Person());
+	    return "registration";
+	}
+
+	@RequestMapping(value="/addPerson", method=RequestMethod.POST)
+	public String savePersonPost(@Valid @ModelAttribute Person personForm, BindingResult result, Model model) {
+	   if(result.hasErrors()) {
+	       model.addAttribute("personForm",  new Person());
+	       return "registration";
+	   }
+	   System.out.println(personForm.getName() + " " + personForm.getSurname());
+	   //Person user = new Person(/*Dati estratti dalla form*/);
+	 	//um.saveUser(user);
+	   return "home";
 	}
 
 	// Le categorie sono hard coded.

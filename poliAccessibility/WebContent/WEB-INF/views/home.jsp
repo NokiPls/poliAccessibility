@@ -48,6 +48,7 @@
 				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
 			</ul>
 			<li><a href="index.html">Contact Us</a></li>
+			<li><a href="${pageContext.request.contextPath}/userRegistration">Registrazione</a></li>
 		</nav>
 
 	</div>

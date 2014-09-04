@@ -2,10 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Products</title>
+<title>Homepage</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -34,21 +35,28 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li ><a href="/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li><a href="/">Homepage</a></li>
+				<li><a href="">Products</a>
 					<ul>
 
-						<li><a href="${pageContext.request.contextPath}/category?category=vision">Vision Impaired</a>
+						<li><a
+							href="${pageContext.request.contextPath}/category?category=vision">Vision
+								Impaired</a>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/category">Braille Displays</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Braille Embossers</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Screen Magnification</a></li>
-								<li><a href="${pageContext.request.contextPath}/category?category=reader">Screen Readers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Displays</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Embossers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Screen
+										Magnification</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/category?category=reader">Screen
+										Readers</a></li>
 							</ul></li></li>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
 			</ul>
 			<li><a href="index.html">Contact Us</a></li>
-			<li><a href="index.html">Registration</a></li>
+			<li class="current"><a href="index.html">Registration</a></li>
 		</nav>
 
 	</div>
@@ -62,41 +70,21 @@
 
 				<article role=article>
 					<header>
-						<h2>${facebookProfile.name}</h2>
-						<p>${facebookProfile.id}</p>
+						<h2>Accessible E-commerce</h2>
+						<p>accessibility project</p>
 					</header>
-					<fieldset>
-						<legend>Your Favorite Color</legend>
-						<input type=”radio” name=”favoritecolor” value=”blue” id=”blue”>
-						<label for=”blue”>Blue</label> <input type=”radio”
-							name=”favoritecolor” value=”green” id=”green”> <label
-							for=”green”>Green</label> <input type=”radio”
-							name=”favoritecolor” value=”purple” id=”purple”> <label
-							for=”purple”>Purple</label>
-					</fieldset>
-					<form action="somescript.php">
-						<fieldset>
-							<legend>Name</legend>
-							<p>
-								First name <input name="firstName">
-							</p>
-							<p>
-								Last name <input name="lastName">
-							</p>
-						</fieldset>
-						<fieldset>
-							<legend>Address</legend>
-							<p>
-								Address
-								<textarea name="address"></textarea>
-							</p>
-							<p>
-								Postal code <input name="postcode">
-							</p>
-						</fieldset>
-						</form>
-				</article>
 
+					<c:url var="url" value="/person" />
+					<form:form action="addPerson" method="post" modelAttribute="personForm">
+						<label>Nome:</label>
+						<form:input path="name" />
+						<label>Cognome:</label>
+						<form:input path="surname" />
+						<input type="submit" />
+					</form:form>
+
+
+				</article>
 			</section>
 		</div>
 	</div>
