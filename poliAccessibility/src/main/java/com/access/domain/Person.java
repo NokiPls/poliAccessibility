@@ -20,7 +20,6 @@ public class Person implements Serializable{
 	private Long oid;
 	@NotNull
 	@Size(min=2)
-	@Column(unique=true)
 	private String name;
 	@NotNull
 	@Size(min=2)
@@ -28,6 +27,7 @@ public class Person implements Serializable{
 	private String address;
 	private int ccn;
 	private String ccexp;
+	@Column(unique=true)
 	private String userName;
 	private String passw;
 

@@ -12,6 +12,6 @@ public interface UsersRepository {
 
 	public void addUser(Person user);
 
-	public Person findUser(String uid);
+	public Person findUserByUserName(String userName);
 
 }

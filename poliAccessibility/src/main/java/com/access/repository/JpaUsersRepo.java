@@ -40,10 +40,10 @@ public class JpaUsersRepo implements UsersRepository {
 	}
 
 	@Override
-	public Person findUser(String name) {
+	public Person findUserByUserName(String userName) {
 		list = new ArrayList<Person>();
-		Query query = em.createQuery("from com.access.domain.Person where name = :name ");
-		query.setParameter("name", name);
+		Query query = em.createQuery("from com.access.domain.Person where userName = :userName ");
+		query.setParameter("userName", userName);
 		list = query.getResultList();
 		if (list.isEmpty()){
 			return null;

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -75,11 +75,22 @@
 					</header>
 
 					<c:url var="url" value="/person" />
-					<form:form action="addPerson" method="post" modelAttribute="personForm">
-						<label>Nome:</label>
+					<form:form action="addPerson" method="post"
+						modelAttribute="personForm">
+						<label>Name:</label>
 						<form:input path="name" />
-						<label>Cognome:</label>
+						<label>Surname:</label>
 						<form:input path="surname" />
+						<label>Address:</label>
+						<form:input path="address" />
+						<label>Ccn:</label>
+						<form:input path="ccn" />
+						<label>Ccexp:</label>
+						<form:input path="ccexp" />
+						<label>User Name:</label>
+						<form:input path="userName" />
+						<label>Password:</label>
+						<form:input path="passw" />
 						<input type="submit" />
 					</form:form>
 

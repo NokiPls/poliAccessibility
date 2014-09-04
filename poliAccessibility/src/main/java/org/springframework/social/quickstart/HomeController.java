@@ -68,9 +68,7 @@ public class HomeController {
 			model.addAttribute("personForm", new Person());
 			return "registration";
 		}
-		System.out
-				.println(personForm.getName() + " " + personForm.getSurname());
-		if (um.getUser(personForm.getName()) == null) {
+		if (um.getUserByUserName(personForm.getUserName()) == null) {
 			um.saveUser(personForm);
 		} else {
 			System.out.println("LOL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -122,7 +120,7 @@ public class HomeController {
 			@RequestParam(value = "userName") String userName,
 			@RequestParam(value = "psw") String psw) {
 
-		Person user = um.getUser(userName);
+		Person user = um.getUserByUserName(userName);
 		if (user.equals(null)) {
 			return "userNotFound";
 		} else {
