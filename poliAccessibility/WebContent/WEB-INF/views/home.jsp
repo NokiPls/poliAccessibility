@@ -70,7 +70,7 @@
 
 				<article role=article>
 					<header>
-						<h2>Accessible E-commerce</h2>
+						<h2>Accessible E-commerce</h2><br>
 						<p>accessibility project</p>
 					</header>
 
