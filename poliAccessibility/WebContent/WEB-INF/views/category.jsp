@@ -49,8 +49,8 @@
 									href="${pageContext.request.contextPath}/category?category=reader">Screen
 										Readers</a></li>
 							</ul></li>
+						<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
 					</ul>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
@@ -72,6 +72,7 @@
 							<h2>
 								<c:out value="${i.name}"></c:out>
 							</h2>
+							<br>
 							<p>
 								<c:out value="${i.briefDescription}"></c:out>
 							</p>
