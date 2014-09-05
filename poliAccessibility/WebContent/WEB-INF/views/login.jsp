@@ -15,11 +15,9 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
-<noscript>
-	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
-	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
-</noscript>
+<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 </head>
 <body>
 
@@ -61,7 +59,6 @@
 			</ul>
 
 		</nav>
-
 	</div>
 
 	<!-- Main -->
@@ -78,8 +75,7 @@
 					</header>
 
 					<c:url var="url" value="/person" />
-					<form:form action="login" method="post"
-						modelAttribute="personForm">
+					<form:form action="login" method="post" modelAttribute="personForm">
 						<label>User Name:</label>
 						<form:input path="userName" />
 						<label>Password:</label>

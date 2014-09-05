@@ -14,11 +14,9 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
-<noscript>
-	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
-	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
-</noscript>
+<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 </head>
 <body>
 
