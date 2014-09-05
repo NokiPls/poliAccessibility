@@ -100,6 +100,7 @@ public class HomeController {
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {
 		model.addAttribute("product", pf.findProducts(category));
+		model.addAttribute("categ", category);
 		return "category";
 	}
 

@@ -32,8 +32,8 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li class="current"><a href="/">Homepage</a></li>
-				<li><a href="">Products</a>
+				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
+				<li class="current"><a href="">Products</a>
 					<ul>
 						<li><a
 							href="${pageContext.request.contextPath}/category?category=vision">Vision

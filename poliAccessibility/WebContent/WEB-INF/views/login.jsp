@@ -33,7 +33,7 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li class="current"><a href="/">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
 				<li><a href="">Products</a>
 					<ul>
 						<li><a
@@ -55,7 +55,7 @@
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
-				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+				<li class="current"><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
 
 		</nav>
