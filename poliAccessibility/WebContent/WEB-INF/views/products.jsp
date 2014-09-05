@@ -34,21 +34,31 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li ><a href="/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li class="current"><a href="/">Homepage</a></li>
+				<li><a href="">Products</a>
 					<ul>
-
-						<li><a href="${pageContext.request.contextPath}/category?category=vision">Vision Impaired</a>
+						<li><a
+							href="${pageContext.request.contextPath}/category?category=vision">Vision
+								Impaired</a>
 							<ul>
-								<li><a href="${pageContext.request.contextPath}/category">Braille Displays</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Braille Embossers</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Screen Magnification</a></li>
-								<li><a href="${pageContext.request.contextPath}/category?category=reader">Screen Readers</a></li>
-							</ul></li></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Displays</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Embossers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Screen
+										Magnification</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/category?category=reader">Screen
+										Readers</a></li>
+							</ul></li>
+					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
+				<li><a href="index.html">Contact Us</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
-			<li><a href="index.html">Contact Us</a></li>
-			<li><a href="index.html">Registration</a></li>
+
 		</nav>
 
 	</div>

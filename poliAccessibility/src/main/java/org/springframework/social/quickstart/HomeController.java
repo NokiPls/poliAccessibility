@@ -69,7 +69,7 @@ public class HomeController {
 		} else {
 			System.out.println("Duplicate userName found !!!");
 		}
-		return "home";
+		return "registration";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -77,14 +77,11 @@ public class HomeController {
 		model.addAttribute("personForm", new Person());
 		return "login";
 	}
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@Valid @ModelAttribute Person personForm,
+	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
-//		if (result.hasErrors()) {
-//			model.addAttribute("personForm", new Person());
-//			return "login";
-//		}
+
 		Person p = um.getUserByUserName(personForm.getUserName());
 		if (p == null) {
 			System.out.println("User not found");
@@ -95,10 +92,10 @@ public class HomeController {
 				System.out.println("Password Errata");
 			}
 		}
-		return "home";
+		return "login";
 	}
 
-	// Le categorie sono hard coded.
+	// Le categorie sono hard coded nel jsp.
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {

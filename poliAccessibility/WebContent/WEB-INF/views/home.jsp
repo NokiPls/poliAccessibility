@@ -14,12 +14,12 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
+</head>
 <noscript>
 	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 </noscript>
-</head>
 <body>
 
 	<!-- Header  ho modificato div in header e aggiunto il ruolo-->
@@ -37,7 +37,6 @@
 				<li class="current"><a href="/">Homepage</a></li>
 				<li><a href="">Products</a>
 					<ul>
-
 						<li><a
 							href="${pageContext.request.contextPath}/category?category=vision">Vision
 								Impaired</a>
@@ -51,14 +50,15 @@
 								<li><a
 									href="${pageContext.request.contextPath}/category?category=reader">Screen
 										Readers</a></li>
-							</ul></li></li>
+							</ul></li>
+					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
+				<li><a href="index.html">Contact Us</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
-			<li><a href="index.html">Contact Us</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
-			<li><a
-				href="${pageContext.request.contextPath}/login">Login</a></li>
+
 		</nav>
 
 	</div>

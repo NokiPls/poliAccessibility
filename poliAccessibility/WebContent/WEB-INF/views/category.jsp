@@ -34,22 +34,32 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li class="current"><a href="/">Homepage</a></li>
+				<li><a href="">Products</a>
 					<ul>
-
-						<li><a href="/category">Vision Impaired</a>
+						<li><a
+							href="${pageContext.request.contextPath}/category?category=vision">Vision
+								Impaired</a>
 							<ul>
-								<li><a href="/category">Braille Displays</a></li>
-								<li><a href="/category">Braille Embossers</a></li>
-								<li><a href="/category">Screen Magnification</a></li>
-								<li><a href="/category">Screen Readers</a></li>
-							</ul></li></li>
-				<li><a href="/category">Autism</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Displays</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Braille
+										Embossers</a></li>
+								<li><a href="${pageContext.request.contextPath}/category">Screen
+										Magnification</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/category?category=reader">Screen
+										Readers</a></li>
+							</ul></li>
+					</ul>
+				<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
+				<li><a href="index.html">Contact Us</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
-			<li><a href="/contactUs">Contact Us</a></li>
-		</nav>
 
+		</nav>
 	</div>
 
 	<!-- Main -->
@@ -61,15 +71,22 @@
 				<c:forEach var="i" items="${product}" varStatus="status">
 					<article role=article>
 						<header>
-							<h2><c:out value="${i.name}"></c:out></h2>
-							<p><c:out value="${i.briefDescription}"></c:out></p>
+							<h2>
+								<c:out value="${i.name}"></c:out>
+							</h2>
+							<p>
+								<c:out value="${i.briefDescription}"></c:out>
+							</p>
 						</header>
 
-						<span class="image featured"><img src="<c:out value="${i.imageURL}"></c:out>"
+						<span class="image featured"><img
+							src="<c:out value="${i.imageURL}"></c:out>"
 							alt="Always provide alt text for accessibility ;-)" /></span>
-							
 
-						<p><c:out value="${i.longDescription}"></c:out></p>
+
+						<p>
+							<c:out value="${i.longDescription}"></c:out>
+						</p>
 
 
 					</article>
