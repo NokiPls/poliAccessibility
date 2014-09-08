@@ -67,9 +67,9 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h2>"${product.name}"</h2>
+						<h2>${product.name}</h2>
 						<br>
-						<p>"${product.longDescription}"</p>
+						<p>${product.longDescription}</p>
 					</header>
 
 					<span class="image featured"><img src="${product.imageURL}"
