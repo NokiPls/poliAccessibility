@@ -64,33 +64,31 @@
 	<div class="wrapper style1">
 		<div class="container">
 			<section id="content" role="main">
-				<h2>${categ}</h2>
 				<!-- Content -->
-				<c:forEach var="i" items="${product}" varStatus="status">
-					<article role=article>
-						<header>
-							<h2>
-								<c:out value="${i.name}"></c:out>
-							</h2>
-							<br>
-							<p>
-								<c:out value="${i.briefDescription}"></c:out>
-							</p>
-						</header>
+				<article role=article>
+					<header>
+						<h2>"${product.name}"</h2>
+						<br>
+						<p>"${product.longDescription}"</p>
+					</header>
 
-						<span class="image featured"><img
-							src="<c:out value="${i.imageURL}"></c:out>"
-							alt="Always provide alt text for accessibility ;-)" /></span>
-
-
-						<p>
-							<c:out value="${i.longDescription}"></c:out>
-						</p>
-						<a
-							href="${pageContext.request.contextPath}/product?i=${status.index}">See more details</a>
-
-					</article>
-				</c:forEach>
+					<span class="image featured"><img src="${product.imageURL}"
+						alt="Always provide alt text for accessibility ;-)" /></span>
+					<iframe width="420" height="315" src="${product.linkVideo}">
+					</iframe>
+					<table>
+						<tr>
+							<th>Jill</th>
+							<th>Smith</th>
+							<th>50</th>
+						</tr>
+						<tr>
+							<td>Eve</td>
+							<td>Jackson</td>
+							<td>94</td>
+						</tr>
+					</table>
+				</article>
 			</section>
 		</div>
 	</div>
