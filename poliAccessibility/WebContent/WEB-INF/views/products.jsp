@@ -54,7 +54,6 @@
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
-				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
 
 		</nav>

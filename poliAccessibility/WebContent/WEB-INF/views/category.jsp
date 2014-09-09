@@ -54,7 +54,6 @@
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
-				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
 
 		</nav>
@@ -81,11 +80,6 @@
 						<span class="image featured"><img
 							src="<c:out value="${i.imageURL}"></c:out>"
 							alt="Always provide alt text for accessibility ;-)" /></span>
-
-
-						<p>
-							<c:out value="${i.longDescription}"></c:out>
-						</p>
 						<a
 							href="${pageContext.request.contextPath}/product?i=${status.index}">See more details</a>
 

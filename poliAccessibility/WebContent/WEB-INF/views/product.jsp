@@ -54,7 +54,6 @@
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
-				<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
 			</ul>
 
 		</nav>
@@ -67,8 +66,8 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h2>${product.prodName}</h2>
-						<br>
+						<h1>${product.prodName}</h1>
+						<a href="${pageContext.request.contextPath}/login">Buy</a><br>
 						<p>${product.longDescription}</p>
 					</header>
 
