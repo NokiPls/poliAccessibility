@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Homepage</title>
+<title>Product</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -67,15 +67,14 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h2>${product.name}</h2>
+						<h2>${product.prodName}</h2>
 						<br>
 						<p>${product.longDescription}</p>
 					</header>
 
 					<span class="image featured"><img src="${product.imageURL}"
 						alt="Always provide alt text for accessibility ;-)" /></span>
-					<iframe width="420" height="315" src="${product.linkVideo}">
-					</iframe>
+					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>
 						<tr>
 							<th>Jill</th>

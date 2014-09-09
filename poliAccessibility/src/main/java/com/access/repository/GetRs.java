@@ -12,8 +12,14 @@ public class GetRs implements ResultSetExtractor {
 	@Override
 	public Object extractData(ResultSet rs) throws SQLException {
 		Product product = new Product();
-		product.setName(rs.getString(1));
 		product.setBriefDescription(rs.getString(2));
+		product.setCategory(rs.getString(3));
+		product.setImageURL(rs.getString(4));
+		product.setLinkVideo(rs.getString(5));
+		product.setLongDescription(rs.getString(6));
+		product.setProdName(rs.getString(7));
+		product.setPrice(rs.getString(8));
+		product.setSpecs(rs.getString(9));
 		return product;
 	}
 

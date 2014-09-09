@@ -7,7 +7,7 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = -7693936929469050335L;
 
 	private Long id;
-	private String name;
+	private String prodName;
 	private String briefDescription;
 	private String longDescription;
 	private String price;
@@ -64,14 +64,6 @@ public class Product implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getCategory() {
 		return category;
 	}
@@ -86,5 +78,13 @@ public class Product implements Serializable {
 
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
+	}
+
+	public String getProdName() {
+		return prodName;
+	}
+
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
 	}
 }

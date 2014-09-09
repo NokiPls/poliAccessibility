@@ -70,7 +70,7 @@
 					<article role=article>
 						<header>
 							<h2>
-								<c:out value="${i.name}"></c:out>
+								<c:out value="${i.prodName}"></c:out>
 							</h2>
 							<br>
 							<p>
