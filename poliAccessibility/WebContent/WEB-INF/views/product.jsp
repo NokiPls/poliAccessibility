@@ -77,9 +77,9 @@
 					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>
 						<tr>
-							<th>Jill</th>
-							<th>Smith</th>
-							<th>50</th>
+							<th>NAME</th>
+							<th>SPECIFICATIONS</th>
+							<th>ALTRO?</th>
 						</tr>
 						<tr>
 							<td>Eve</td>
