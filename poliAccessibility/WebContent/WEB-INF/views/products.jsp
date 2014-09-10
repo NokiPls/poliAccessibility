@@ -72,7 +72,7 @@
 						<p>
 							<c:forEach var="i" items="${subcategories}" varStatus="status">
 								<h2>
-									<a href="${pageContext.request.contextPath}/category?=${i}">${i}</a>
+									<a href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
 								</h2>
 							</c:forEach>
 						</p>

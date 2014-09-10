@@ -66,7 +66,7 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h1>${product.prodName}</h1>
+						<h1>${product.prodName}</h1><br>
 						<a href="${pageContext.request.contextPath}/login">Buy</a><br>
 						<p>${product.longDescription}</p>
 					</header>

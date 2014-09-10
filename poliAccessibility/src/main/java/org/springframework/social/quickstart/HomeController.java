@@ -114,7 +114,16 @@ public class HomeController {
 
 		products = new ArrayList<Product>();
 		products = pf.findProductsByType(type);
-
+		
+		List<String> subcat = new ArrayList<String>();
+		
+		if (type.equals("vision")){
+			subcat.add("Braille Displays");
+			subcat.add("Braille Embossers");
+			subcat.add("Screen Readers");
+		}
+		
+		model.addAttribute("subcategories", subcat);
 		model.addAttribute("type", type);
 		model.addAttribute("product", products);
 		return "products";
