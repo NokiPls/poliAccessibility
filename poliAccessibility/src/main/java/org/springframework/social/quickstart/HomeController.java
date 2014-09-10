@@ -69,6 +69,7 @@ public class HomeController {
 		} else {
 			System.out.println("Duplicate userName found !!!");
 		}
+		model.addAttribute("personForm", new Person());
 		return "registration";
 	}
 
@@ -92,6 +93,7 @@ public class HomeController {
 				System.out.println("Password Errata");
 			}
 		}
+		model.addAttribute("personForm", new Person());
 		return "login";
 	}
 
