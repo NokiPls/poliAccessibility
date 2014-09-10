@@ -102,25 +102,23 @@ public class HomeController {
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {
 		products = new ArrayList<Product>();
-		products = pf.findProducts(category);
+		products = pf.findProductsByCategory(category);
 		model.addAttribute("product", products);
 		model.addAttribute("categ", category);
 		return "category";
 	}
 
 	// Prodotti di una categoria
-//	@RequestMapping(value = "/products", method = RequestMethod.GET)
-//	public String products(Model model) {
-//
-////		products = new ArrayList<Product>();
-//
-//		// Tirar fuori products dal db
-//
-//		// Su quante pagine disponiamo n prodotti?
-//
-//		model.addAttribute("products", products);
-//		return "products";
-//	}
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	public String products(Model model, @RequestParam(value = "type") String type) {
+
+		products = new ArrayList<Product>();
+		products = pf.findProductsByType(type);
+
+		model.addAttribute("type", type);
+		model.addAttribute("product", products);
+		return "products";
+	}
 
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "i") int i) {

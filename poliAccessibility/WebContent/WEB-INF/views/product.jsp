@@ -36,7 +36,7 @@
 				<li class="current"><a href="">Products</a>
 					<ul>
 						<li><a
-							href="${pageContext.request.contextPath}/category?category=vision">Vision
+							href="${pageContext.request.contextPath}/products?type=vision">Vision
 								Impaired</a>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/category">Braille

@@ -36,7 +36,7 @@
 				<li class="current"><a href="">Products</a>
 					<ul>
 						<li><a
-							href="${pageContext.request.contextPath}/category?category=vision">Vision
+							href="${pageContext.request.contextPath}/products?type=vision">Vision
 								Impaired</a>
 							<ul>
 								<li><a href="${pageContext.request.contextPath}/category">Braille
@@ -68,41 +68,36 @@
 
 				<article role=article>
 					<header>
-						<h2>${facebookProfile.name}</h2>
-						<p>${facebookProfile.id}</p>
+						<h2>${category}</h2>
+						<p>
+							<c:forEach var="i" items="${subcategories}" varStatus="status">
+								<h2>
+									<a href="${pageContext.request.contextPath}/category?=${i}">${i}</a>
+								</h2>
+							</c:forEach>
+						</p>
 					</header>
-					<fieldset>
-						<legend>Your Favorite Color</legend>
-						<input type=”radio” name=”favoritecolor” value=”blue” id=”blue”>
-						<label for=”blue”>Blue</label> <input type=”radio”
-							name=”favoritecolor” value=”green” id=”green”> <label
-							for=”green”>Green</label> <input type=”radio”
-							name=”favoritecolor” value=”purple” id=”purple”> <label
-							for=”purple”>Purple</label>
-					</fieldset>
-					<form action="somescript.php">
-						<fieldset>
-							<legend>Name</legend>
-							<p>
-								First name <input name="firstName">
-							</p>
-							<p>
-								Last name <input name="lastName">
-							</p>
-						</fieldset>
-						<fieldset>
-							<legend>Address</legend>
-							<p>
-								Address
-								<textarea name="address"></textarea>
-							</p>
-							<p>
-								Postal code <input name="postcode">
-							</p>
-						</fieldset>
-					</form>
+					<section id="content" role="main">
+						<c:forEach var="i" items="${product}" varStatus="status">
+							<article role=article>
+								<header>
+									<h2>
+										<c:out value="${i.prodName}"></c:out>
+									</h2>
+									<br>
+									<p>
+										<c:out value="${i.briefDescription}"></c:out>
+									</p>
+								</header>
+								<span class="image featured"><img
+									src="<c:out value="${i.imageURL}"></c:out>"
+									alt="Always provide alt text for accessibility ;-)" /></span> <a
+									href="${pageContext.request.contextPath}/product?i=${status.index}">See
+									more details</a>
+							</article>
+						</c:forEach>
+					</section>
 				</article>
-
 			</section>
 		</div>
 	</div>

@@ -15,6 +15,7 @@ public class Product implements Serializable {
 	private String specs;
 	private String category;
 	private String imageURL;
+	private String productType;
 
 	public String getBriefDescription() {
 		return briefDescription;
@@ -86,5 +87,13 @@ public class Product implements Serializable {
 
 	public void setProdName(String prodName) {
 		this.prodName = prodName;
+	}
+
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 }

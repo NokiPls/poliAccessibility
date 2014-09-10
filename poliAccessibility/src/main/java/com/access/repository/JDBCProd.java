@@ -24,5 +24,14 @@ public class JDBCProd implements ProductsDao {
 						new Object[] { category },
 						new Mapper());
 	}
+	
+	@Override
+	public List<Product> selectType(String type){
+		JdbcTemplate select = new JdbcTemplate(dataSource);
+		return select
+				.query("select * from PRODUCT where PRODUCTTYPE = ?",
+						new Object[] { type },
+						new Mapper());
+	}
 
 }
