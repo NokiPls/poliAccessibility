@@ -69,13 +69,13 @@
 					<table>
 						<tr>
 							<th>NAME</th>
-							<th>SPECIFICATIONS</th>
-							<th>ALTRO?</th>
+							<th>FEATURES</th>
+							<th>COMPATIBILITY</th>
 						</tr>
 						<tr>
-							<td>Eve</td>
-							<td>Jackson</td>
-							<td>94</td>
+							<td>${product.prodName}</td>
+							<td>${product.features}</td>
+							<td>${product.compatibility}</td>
 						</tr>
 					</table>
 				</article>

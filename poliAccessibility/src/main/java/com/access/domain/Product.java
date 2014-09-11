@@ -2,20 +2,27 @@ package com.access.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = -7693936929469050335L;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String prodName;
 	private String briefDescription;
 	private String longDescription;
 	private String price;
 	private String linkVideo;
-	private String specs;
 	private String category;
 	private String imageURL;
 	private String productType;
+	private String compatibility;
+	private String features;
 
 	public String getBriefDescription() {
 		return briefDescription;
@@ -47,14 +54,6 @@ public class Product implements Serializable {
 
 	public void setLinkVideo(String linkVideo) {
 		this.linkVideo = linkVideo;
-	}
-
-	public String getSpecs() {
-		return specs;
-	}
-
-	public void setSpecs(String specs) {
-		this.specs = specs;
 	}
 
 	public Long getId() {
@@ -95,5 +94,21 @@ public class Product implements Serializable {
 
 	public void setProductType(String productType) {
 		this.productType = productType;
+	}
+
+	public String getCompatibility() {
+		return compatibility;
+	}
+
+	public void setCompatibility(String compatibility) {
+		this.compatibility = compatibility;
+	}
+
+	public String getFeatures() {
+		return features;
+	}
+
+	public void setFeatures(String features) {
+		this.features = features;
 	}
 }
