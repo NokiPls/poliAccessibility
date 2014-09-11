@@ -59,15 +59,15 @@
 
 				<article role=article>
 					<header>
-						<h2>${type}</h2>
-						<p>
+						<ul>
+							<li><a
+								href="${pageContext.request.contextPath}/products?type=${type}">${type}</a></li>
 							<c:forEach var="i" items="${subcategories}" varStatus="status">
-								<h2>
-									<a
-										href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
-								</h2>
+								<li><a
+									href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
+								</li>
 							</c:forEach>
-						</p>
+						</ul>
 					</header>
 					<section id="content" role="main">
 						<c:forEach var="i" items="${product}" varStatus="status">
