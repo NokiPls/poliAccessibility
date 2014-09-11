@@ -70,21 +70,41 @@
 					<form:form action="addPerson" method="post"
 						modelAttribute="personForm">
 						<label>First Name:</label>
-						<form:input path="name" placeholder="First Name" />
+						<form:input path="name" placeholder="First Name" required />
 						<label>Surname:</label>
-						<form:input path="surname" placeholder="Surname" />
+						<form:input path="surname" placeholder="Surname" required />
 						<label>Address:</label>
-						<form:input path="address" placeholder="Address" />
+						<form:input path="address" placeholder="Address" required />
 						<label>Ccn:</label>
-						<form:input path="ccn" placeholder="Ccn" />
+						<form:input path="ccn" placeholder="Ccn" required />
 						<label>Cc expiration date:</label>
-						<form:input path="ccexp" placeholder="Cc expiration date DD/MM" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])" title="The date should be in the format DD/MM with leading zeros where necessary" />
+						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
+							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
+							title="The date should be in the format DD/MM with leading zeros where necessary"
+							required />
 						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name" />
+						<form:input path="userName" placeholder="User Name" required />
 						<label>Password:</label>
-						<form:input type="password" path="passw" placeholder="Password" />
+						<form:input id="password" type="password" path="passw"
+							placeholder="Password" required />
 						<label>Confirm Password:</label>
-						<input type="password" placeholder="Confirm Password" />
+						<input id="confirmPassword" type="password"
+							placeholder="Confirm Password" required />
+						<!-- <script type='text/javascript'>
+							function check() {
+								if (document.getElementById('confirmPassword').value != document
+										.getElementById('password').value) {
+									document
+											.getElementById('confirmPassword')
+											.setCustomValidity(
+													'Password Must be Matching.');
+								} else {
+									// input is valid -- reset the error message
+									document.getElementById('confirmPassword')
+											.setCustomValidity('');
+								}
+							}
+						</script> -->
 						<input type="submit" />
 					</form:form>
 
