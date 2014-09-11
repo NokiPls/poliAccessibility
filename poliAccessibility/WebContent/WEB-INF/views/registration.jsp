@@ -63,34 +63,34 @@
 					<header>
 						<h2>Accessible E-commerce</h2>
 						<br>
-						<p>accessibility project</p>
+						<p>Accessibility Project</p>
 					</header>
 
 					<c:url var="url" value="/person" />
 					<form:form action="addPerson" method="post"
 						modelAttribute="personForm">
 						<label>First Name:</label>
-						<form:input path="name" placeholder="First Name" required />
+						<form:input path="name" placeholder="First Name" required="true" />
 						<label>Surname:</label>
-						<form:input path="surname" placeholder="Surname" required />
+						<form:input path="surname" placeholder="Surname" required="true" />
 						<label>Address:</label>
-						<form:input path="address" placeholder="Address" required />
+						<form:input path="address" placeholder="Address" required="true" />
 						<label>Ccn:</label>
-						<form:input path="ccn" placeholder="Ccn" required />
+						<form:input path="ccn" placeholder="Ccn" required="true" />
 						<label>Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
-							required />
+							required="true" />
 						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name" required />
+						<form:input path="userName" placeholder="User Name" required="true" />
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
-							placeholder="Password" required />
+							placeholder="Password" required="true" />
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"
-							placeholder="Confirm Password" required />
-						<!-- <script type='text/javascript'>
+							placeholder="Confirm Password" required oninput="check()"/>
+						<script type='text/javascript'>
 							function check() {
 								if (document.getElementById('confirmPassword').value != document
 										.getElementById('password').value) {
@@ -104,7 +104,7 @@
 											.setCustomValidity('');
 								}
 							}
-						</script> -->
+						</script>
 						<input type="submit" />
 					</form:form>
 
@@ -120,7 +120,7 @@
 	<div id="footer">
 		<footer class="copyright" role="contentinfo">
 
-			<p>Accessibility project 2013/14</p>
+			<p>Accessibility Project 2013/14</p>
 
 		</footer>
 	</div>

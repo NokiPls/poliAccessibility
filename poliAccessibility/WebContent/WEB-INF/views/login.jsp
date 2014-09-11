@@ -43,7 +43,8 @@
 							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
 								and Speech</a></li>
 					</ul>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
+						Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
@@ -62,16 +63,19 @@
 					<header>
 						<h2>Accessible E-commerce</h2>
 						<br>
-						<p>accessibility project</p><br>
+						<p>accessibility project</p>
+						<br>
 						<p>Confirm your identity to proceed with the order.</p>
 					</header>
 
 					<c:url var="url" value="/person" />
 					<form:form action="login" method="post" modelAttribute="personForm">
 						<label>User Name:</label>
-						<form:input path="userName" />
+						<form:input path="userName" placeholder="User Name"
+							required="true" />
 						<label>Password:</label>
-						<form:input path="passw" />
+						<form:input type="password" placeholder="Password" path="passw"
+							required="true" />
 						<input type="submit" />
 					</form:form>
 
