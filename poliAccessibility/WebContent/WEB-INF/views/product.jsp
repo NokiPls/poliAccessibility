@@ -42,7 +42,7 @@
 							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
 								and Speech</a></li>
 					</ul>
-				<li><a href="index.html">Contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>

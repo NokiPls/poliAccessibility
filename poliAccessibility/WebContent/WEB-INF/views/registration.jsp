@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Homepage</title>
+<title>Registration</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -43,7 +43,8 @@
 							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
 								and Speech</a></li>
 					</ul>
-				<li><a href="index.html">Contact Us</a></li>
+				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
+						Us</a></li>
 				<li class="current"><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
@@ -68,20 +69,22 @@
 					<c:url var="url" value="/person" />
 					<form:form action="addPerson" method="post"
 						modelAttribute="personForm">
-						<label>Name:</label>
-						<form:input path="name" />
+						<label>First Name:</label>
+						<form:input path="name" placeholder="First Name" />
 						<label>Surname:</label>
-						<form:input path="surname" />
+						<form:input path="surname" placeholder="Surname" />
 						<label>Address:</label>
-						<form:input path="address" />
+						<form:input path="address" placeholder="Address" />
 						<label>Ccn:</label>
-						<form:input path="ccn" />
-						<label>Ccexp:</label>
-						<form:input path="ccexp" />
+						<form:input path="ccn" placeholder="Ccn" />
+						<label>Cc expiration date:</label>
+						<form:input path="ccexp" placeholder="Cc expiration date DD/MM" pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])" title="The date should be in the format DD/MM with leading zeros where necessary" />
 						<label>User Name:</label>
-						<form:input path="userName" />
+						<form:input path="userName" placeholder="User Name" />
 						<label>Password:</label>
-						<form:input path="passw" />
+						<form:input type="password" path="passw" placeholder="Password" />
+						<label>Confirm Password:</label>
+						<input type="password" placeholder="Confirm Password" />
 						<input type="submit" />
 					</form:form>
 
