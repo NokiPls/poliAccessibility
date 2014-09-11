@@ -36,26 +36,16 @@
 				<li><a href="">Products</a>
 					<ul>
 						<li><a
-							href="${pageContext.request.contextPath}/products?type=vision">Vision
-								Impaired</a>
-							<ul>
-								<li><a href="${pageContext.request.contextPath}/category">Braille
-										Displays</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Braille
-										Embossers</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Screen
-										Magnification</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/category?category=reader">Screen
-										Readers</a></li>
-							</ul></li>
-						<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
+							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
+								Impaired</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
+								and Speech</a></li>
 					</ul>
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
-
 		</nav>
 	</div>
 

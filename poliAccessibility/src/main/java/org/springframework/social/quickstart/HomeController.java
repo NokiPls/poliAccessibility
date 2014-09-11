@@ -32,6 +32,7 @@ public class HomeController {
 	private List<Product> products = new ArrayList<Product>();
 	private UserManagerInterface um;
 	private ProductsFinderInterface pf;
+	private String type;
 
 	@Autowired
 	public HomeController(UserManagerInterface um, ProductsFinderInterface pf) {
@@ -105,6 +106,7 @@ public class HomeController {
 		products = pf.findProductsByCategory(category);
 		model.addAttribute("product", products);
 		model.addAttribute("categ", category);
+		model.addAttribute("type", this.type);
 		return "category";
 	}
 
@@ -115,9 +117,11 @@ public class HomeController {
 		products = new ArrayList<Product>();
 		products = pf.findProductsByType(type);
 		
+		this.type = type;
+		
 		List<String> subcat = new ArrayList<String>();
 		
-		if (type.equals("vision")){
+		if (type.equals("Vision Impaired")){
 			subcat.add("Braille Displays");
 			subcat.add("Braille Embossers");
 			subcat.add("Screen Readers");

@@ -36,20 +36,11 @@
 				<li class="current"><a href="">Products</a>
 					<ul>
 						<li><a
-							href="${pageContext.request.contextPath}/products?type=vision">Vision
-								Impaired</a>
-							<ul>
-								<li><a href="${pageContext.request.contextPath}/category">Braille
-										Displays</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Braille
-										Embossers</a></li>
-								<li><a href="${pageContext.request.contextPath}/category">Screen
-										Magnification</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/category?category=reader">Screen
-										Readers</a></li>
-							</ul></li>
-						<li><a href="${pageContext.request.contextPath}/contactUs">Autism</a></li>
+							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
+								Impaired</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
+								and Speech</a></li>
 					</ul>
 				<li><a href="index.html">Contact Us</a></li>
 				<li><a
@@ -67,8 +58,9 @@
 				<article role=article>
 					<header>
 						<h1>${product.prodName}</h1><br>
-						<a href="${pageContext.request.contextPath}/login">Buy</a><br>
-						<p>${product.longDescription}</p>
+						<p>${product.longDescription}</p><br>
+						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
+
 					</header>
 
 					<span class="image featured"><img src="${product.imageURL}"
