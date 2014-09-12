@@ -65,7 +65,6 @@
 						<br>
 						<p>Accessibility Project</p>
 					</header>
-
 					<c:url var="url" value="/person" />
 					<form:form action="addPerson" method="post"
 						modelAttribute="personForm">
@@ -83,32 +82,28 @@
 							title="The date should be in the format DD/MM with leading zeros where necessary"
 							required="true" />
 						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name" required="true" />
+						<form:input path="userName" placeholder="User Name"
+							required="true" />
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"
-							placeholder="Confirm Password" required oninput="check()"/>
+							placeholder="Confirm Password" required oninput="check(this)" />
 						<script type='text/javascript'>
-							function check() {
-								if (document.getElementById('confirmPassword').value != document
+							function check(input) {
+								if (input.value != document
 										.getElementById('password').value) {
-									document
-											.getElementById('confirmPassword')
-											.setCustomValidity(
-													'Password Must be Matching.');
+									input
+											.setCustomValidity('Password Must be Matching.');
 								} else {
 									// input is valid -- reset the error message
-									document.getElementById('confirmPassword')
-											.setCustomValidity('');
+									input.setCustomValidity('');
 								}
 							}
 						</script>
 						<input type="submit" />
 					</form:form>
-
-
 				</article>
 			</section>
 		</div>
