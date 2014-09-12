@@ -33,6 +33,8 @@ public class HomeController {
 	private UserManagerInterface um;
 	private ProductsFinderInterface pf;
 	private String type;
+	private Product currentProduct;
+	private Person currentUser;
 
 	@Autowired
 	public HomeController(UserManagerInterface um, ProductsFinderInterface pf) {
@@ -88,6 +90,7 @@ public class HomeController {
 	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
 
+		currentUser = personForm;
 		Person p = um.getUserByUserName(personForm.getUserName());
 		if (p == null) {
 			System.out.println("User not found");
@@ -98,8 +101,9 @@ public class HomeController {
 				System.out.println("Password Errata");
 			}
 		}
-		model.addAttribute("personForm", new Person());
-		return "login";
+		model.addAttribute("person", currentUser);
+		model.addAttribute("product", currentProduct);
+		return "purchaseConfirm";
 	}
 
 	// Le categorie sono hard coded nel jsp.
@@ -139,7 +143,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "i") int i) {
-		model.addAttribute("product", products.get(i));
+		currentProduct = products.get(i);
+		model.addAttribute("product", currentProduct);
 		return "product";
 	}
 

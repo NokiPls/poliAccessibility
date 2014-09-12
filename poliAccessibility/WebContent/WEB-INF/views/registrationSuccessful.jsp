@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>${product.prodName}</title>
+<title>Registration Successful</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -14,10 +14,10 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
+</head>
 <link href="<c:url value="/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/css/skel.css" />" rel="stylesheet">
 <link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
-</head>
 <body>
 
 	<!-- Header  ho modificato div in header e aggiunto il ruolo-->
@@ -35,7 +35,7 @@
 		<nav id="nav" role="navigation">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li><a href="">Products</a>
 					<ul>
 						<li><a
 							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
@@ -46,10 +46,9 @@
 					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 						Us</a></li>
-				<li><a
+				<li class="current"><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
-
 		</nav>
 	</div>
 
@@ -57,33 +56,19 @@
 	<div class="wrapper style1">
 		<div class="container">
 			<section id="content" role="main">
+
 				<!-- Content -->
+
 				<article role=article>
 					<header>
-						<h1>${product.prodName}</h1>
+						<h2>Accessible E-commerce</h2>
 						<br>
-						<p>${product.longDescription}</p>
-						<br> <br>
-						<p>${product.price}</p>
-						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
-
+						<p>Accessibility Project</p>
 					</header>
-
-					<span class="image featured"><img src="${product.imageURL}"
-						alt="Always provide alt text for accessibility ;-)" /></span>
-					<embed width="420" height="315" src="${product.linkVideo}">
-					<table>
-						<tr>
-							<th>NAME</th>
-							<th>FEATURES</th>
-							<th>COMPATIBILITY</th>
-						</tr>
-						<tr>
-							<td>${product.prodName}</td>
-							<td>${product.features}</td>
-							<td>${product.compatibility}</td>
-						</tr>
-					</table>
+					<p>Congratulations, ${surname} ${name}, your registration has
+						been successful.</p>
+					<br> <a href="${pageContext.request.contextPath}/">Proceed
+						to the homepage.</a>
 				</article>
 			</section>
 		</div>
@@ -95,7 +80,7 @@
 	<div id="footer">
 		<footer class="copyright" role="contentinfo">
 
-			<p>Accessibility project 2013/14</p>
+			<p>Accessibility Project 2013/14</p>
 
 		</footer>
 	</div>

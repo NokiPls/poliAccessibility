@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>${product.prodName}</title>
+<title>Purchase</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -62,33 +62,24 @@
 					<header>
 						<h1>${product.prodName}</h1>
 						<br>
-						<p>${product.longDescription}</p>
-						<br> <br>
-						<p>${product.price}</p>
-						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
-
 					</header>
 
-					<span class="image featured"><img src="${product.imageURL}"
-						alt="Always provide alt text for accessibility ;-)" /></span>
-					<embed width="420" height="315" src="${product.linkVideo}">
-					<table>
-						<tr>
-							<th>NAME</th>
-							<th>FEATURES</th>
-							<th>COMPATIBILITY</th>
-						</tr>
-						<tr>
-							<td>${product.prodName}</td>
-							<td>${product.features}</td>
-							<td>${product.compatibility}</td>
-						</tr>
-					</table>
+					<p>${product.briefDescription}</p>
+					<br> <span class="image featured"><img
+						src="${product.imageURL}"
+						alt="Always provide alt text for accessibility ;-)" /></span><br>
+					<p>${product.price}</p>
+					<br>
+					<p>${person.address}</p>
+					<br>
+					<form action="${pageContext.request.contextPath}/">
+						<label>Different Address:</label> <input placeholder="Address" />
+						<input type="submit" value="Confirm and Buy">
+					</form>
 				</article>
 			</section>
 		</div>
 	</div>
-
 
 	<!-- Footer -->
 
