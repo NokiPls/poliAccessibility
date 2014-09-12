@@ -61,8 +61,9 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
-	public String registrationFormEvaluation(@Valid @ModelAttribute Person personForm,
-			BindingResult result, Model model) {
+	public String registrationFormEvaluation(
+			@Valid @ModelAttribute Person personForm, BindingResult result,
+			Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("personForm", new Person());
 			return "registration";
@@ -77,7 +78,7 @@ public class HomeController {
 			model.addAttribute("personForm", new Person());
 			return "registration";
 		}
-		
+
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -120,21 +121,22 @@ public class HomeController {
 
 	// Prodotti di una categoria
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
-	public String products(Model model, @RequestParam(value = "type") String type) {
+	public String products(Model model,
+			@RequestParam(value = "type") String type) {
 
 		products = new ArrayList<Product>();
 		products = pf.findProductsByType(type);
-		
+
 		this.type = type;
-		
+
 		List<String> subcat = new ArrayList<String>();
-		
-		if (type.equals("Vision Impaired")){
+
+		if (type.equals("Vision Impaired")) {
 			subcat.add("Braille Displays");
 			subcat.add("Braille Embossers");
 			subcat.add("Screen Readers");
 		}
-		
+
 		model.addAttribute("subcategories", subcat);
 		model.addAttribute("type", type);
 		model.addAttribute("product", products);
