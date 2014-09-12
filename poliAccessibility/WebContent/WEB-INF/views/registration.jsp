@@ -27,7 +27,9 @@
 		<!-- Logo  aggiunta nav-->
 		<header role="banner">
 			<h1>
-				<a href="index.html" id="logo">E-commerce <em>accessibility</em></a>
+				<a href="${pageContext.request.contextPath}/" id="logo">E-commerce
+					<em>accessibility</em>
+				</a>
 			</h1>
 		</header>
 		<!-- Nav -->
@@ -66,7 +68,7 @@
 						<p>Accessibility Project</p>
 					</header>
 					<c:url var="url" value="/person" />
-					<form:form action="addPerson" method="post"
+					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
 						<label>First Name:</label>
 						<form:input path="name" placeholder="First Name" required="true" />

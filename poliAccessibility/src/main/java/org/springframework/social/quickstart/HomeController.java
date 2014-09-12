@@ -58,8 +58,8 @@ public class HomeController {
 		return "registration";
 	}
 
-	@RequestMapping(value = "/addPerson", method = RequestMethod.POST)
-	public String savePersonPost(@Valid @ModelAttribute Person personForm,
+	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
+	public String registrationFormEvaluation(@Valid @ModelAttribute Person personForm,
 			BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("personForm", new Person());
@@ -67,11 +67,15 @@ public class HomeController {
 		}
 		if (um.getUserByUserName(personForm.getUserName()) == null) {
 			um.saveUser(personForm);
+			model.addAttribute("name", personForm.getName());
+			model.addAttribute("surname", personForm.getSurname());
+			return "registrationSuccessful";
 		} else {
 			System.out.println("Duplicate userName found !!!");
+			model.addAttribute("personForm", new Person());
+			return "registration";
 		}
-		model.addAttribute("personForm", new Person());
-		return "registration";
+		
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

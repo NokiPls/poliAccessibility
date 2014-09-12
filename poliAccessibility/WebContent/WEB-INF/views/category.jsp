@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Homepage</title>
+<title>${categ}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -26,7 +26,7 @@
 		<!-- Logo  aggiunta nav-->
 		<header role="banner">
 			<h1>
-				<a href="index.html" id="logo">E-commerce <em>accessibility</em></a>
+				<a href="${pageContext.request.contextPath}/" id="logo">E-commerce <em>accessibility</em></a>
 			</h1>
 		</header>
 		<!-- Nav -->
