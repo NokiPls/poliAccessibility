@@ -71,7 +71,8 @@
 					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
 						<label>First Name:</label>
-						<form:input path="name" placeholder="First Name" required="true" />
+						<form:input path="name" placeholder="First Name" required="true"
+							autofocus="true" />
 						<label>Surname:</label>
 						<form:input path="surname" placeholder="Surname" required="true" />
 						<label>Address:</label>
@@ -84,8 +85,19 @@
 							title="The date should be in the format DD/MM with leading zeros where necessary"
 							required="true" />
 						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name"
-							required="true" />
+						<form:input id="userName" path="userName" placeholder="User Name"
+							onleave="checkUserName(this)" required="true" />
+						<script type='text/javascript'>
+							function checkUserName(input) {
+								$.ajax({
+									url : 'checkUserName?userName='
+											+ input.value,
+									success : function(data) {
+										$('#result').html(data);
+									}
+								})
+							}
+						</script>
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />

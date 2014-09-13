@@ -81,6 +81,19 @@ public class HomeController {
 
 	}
 
+	@RequestMapping(value = "/checkUserName", method = RequestMethod.GET)
+	public String checkUsarName(
+			@RequestParam(value = "userName") String userName) {
+		
+		if (um.getUserByUserName(userName) == null){
+			//ok
+		} else {
+			//userName duplicato
+		}
+
+		return "checkUserName";
+	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("personForm", new Person());
