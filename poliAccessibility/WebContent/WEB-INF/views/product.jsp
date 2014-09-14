@@ -69,7 +69,7 @@
 
 					</header>
 
-					<span class="image featured"><img src="${product.imageURL}"
+					<span class="image featured"><img src="<c:url value="/img/${product.imageURL}"/>"
 						alt="Always provide alt text for accessibility ;-)" /></span>
 					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>

@@ -72,7 +72,7 @@
 						</header>
 
 						<span class="image featured"><img
-							src="<c:out value="${i.imageURL}"></c:out>"
+							src="<c:url value="/img/${i.imageURL}"/>"
 							alt="Always provide alt text for accessibility ;-)" /></span> <a
 							href="${pageContext.request.contextPath}/product?i=${status.index}">See
 							more details</a>

@@ -66,7 +66,7 @@
 
 					<p>${product.briefDescription}</p>
 					<br> <span class="image featured"><img
-						src="${product.imageURL}"
+						src="<c:url value="/img/${i.imageURL}"/>"
 						alt="Always provide alt text for accessibility ;-)" /></span><br>
 					<p>${product.price}</p>
 					<br>
