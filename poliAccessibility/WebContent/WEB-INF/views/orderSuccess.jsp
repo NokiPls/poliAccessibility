@@ -2,11 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Login</title>
+<title>Purchase</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -58,42 +57,20 @@
 	<div class="wrapper style1">
 		<div class="container">
 			<section id="content" role="main">
-
 				<!-- Content -->
-
 				<article role=article>
 					<header>
-						<h2>Accessible E-commerce</h2>
+						<h1>Success</h1>
 						<br>
-						<p>accessibility project</p>
-						<br>
-						<p>Confirm your identity to proceed with the order.</p>
 					</header>
 
-					<c:url var="url" value="/person" />
-					<form:form action="login" method="post" modelAttribute="personForm">
-						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name" value="${userName}"
-							required="true" />
-						<label>Password:</label>
-						<form:input type="password" placeholder="Password" path="passw"
-							required="true" />
-
-						<p>${error}</p>
-
-						<input type="submit" />
-					</form:form>
-
-					<p>Not registered yet?</p>
-					<br> <a
-						href="${pageContext.request.contextPath}/userRegistration">Register
-						an account.</a>
-
+					<form action="${pageContext.request.contextPath}/">
+						<input type="submit" value="Back to the homepage.">
+					</form>
 				</article>
 			</section>
 		</div>
 	</div>
-
 
 	<!-- Footer -->
 

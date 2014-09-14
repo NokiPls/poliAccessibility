@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.access.domain.Product;
 import com.access.domain.Person;
@@ -82,13 +83,13 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/checkUserName", method = RequestMethod.GET)
-	public String checkUsarName(
-			@RequestParam(value = "userName") String userName) {
-		
-		if (um.getUserByUserName(userName) == null){
-			//ok
+	public @ResponseBody
+	String checkUsarName(@RequestParam(value = "userName") String userName) {
+
+		if (um.getUserByUserName(userName) == null) {
+			// ok
 		} else {
-			//userName duplicato
+			// userName duplicato
 		}
 
 		return "checkUserName";
@@ -104,20 +105,35 @@ public class HomeController {
 	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
 
+		String error = "";
 		currentUser = personForm;
 		Person p = um.getUserByUserName(personForm.getUserName());
 		if (p == null) {
 			System.out.println("User not found");
+			error = "Incorrect Username.";
+			model.addAttribute("error", error);
+			model.addAttribute("personForm", new Person());
+			return "login";
 		} else {
 			if (p.getPassw().equals(personForm.getPassw())) {
-				System.out.println("Peeeeeeeeeeeeeeeerifetto!!");
+				System.out.println("Peeeeeeeeeeeeeeeerfietto!!");
 			} else {
 				System.out.println("Password Errata");
+				error = "Incorrect Password.";
+				model.addAttribute("personForm", new Person());
+				model.addAttribute("error", error);
+				model.addAttribute("userName", personForm.getUserName());
+				return "login";
 			}
 		}
 		model.addAttribute("person", currentUser);
 		model.addAttribute("product", currentProduct);
 		return "purchaseConfirm";
+	}
+	
+	@RequestMapping(value="/checkLogin", method = RequestMethod.GET)
+	public String checkLogin(Model model){
+		return "";
 	}
 
 	// Le categorie sono hard coded nel jsp.
@@ -163,9 +179,9 @@ public class HomeController {
 		return "product";
 	}
 
-	@RequestMapping(value = "/buy", method = RequestMethod.GET)
+	@RequestMapping(value = "/orderSuccess", method = RequestMethod.GET)
 	public String buy(Model model) {
-		return "buy";
+		return "orderSuccess";
 	}
 
 }

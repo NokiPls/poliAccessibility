@@ -71,9 +71,9 @@
 					<p>${product.price}</p>
 					<br>
 					<p>${person.address}</p>
-					<br>
-					<form action="${pageContext.request.contextPath}/">
-						<label>Different Address:</label> <input placeholder="Address" />
+					<br> <label>Different Address:</label> <input
+						placeholder="New Address" />
+					<form action="${pageContext.request.contextPath}/orderSuccess">
 						<input type="submit" value="Confirm and Buy">
 					</form>
 				</article>
