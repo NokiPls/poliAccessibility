@@ -62,7 +62,7 @@
 					<header>
 						<h1>${product.prodName}</h1>
 						<br>
-						<p>${product.longDescription}</p>
+						<p>${product.briefDescription} ${product.longDescription}</p>
 						<br> <br>
 						<p>${product.price}</p>
 						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
