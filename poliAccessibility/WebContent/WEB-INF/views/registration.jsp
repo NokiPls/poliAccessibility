@@ -71,22 +71,22 @@
 					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
 						<label>First Name:</label>
-						<form:input path="name" placeholder="First Name" required="true"
-							autofocus="true" />
+						<form:input path="name" placeholder="First Name" required="true" required aria-required="true"
+							autofocus="true"  />
 						<label>Surname:</label>
-						<form:input path="surname" placeholder="Surname" required="true" />
+						<form:input path="surname" placeholder="Surname" required="true" required aria-required="true"/>
 						<label>Address:</label>
-						<form:input path="address" placeholder="Address" required="true" />
+						<form:input path="address" placeholder="Address" required="true" required aria-required="true" />
 						<label>Ccn:</label>
-						<form:input path="ccn" placeholder="Ccn" required="true" />
+						<form:input path="ccn" placeholder="Ccn" required="true" required aria-required="true"/>
 						<label>Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
-							required="true" />
+							required="true" required aria-required="true"/>
 						<label>User Name:</label>
 						<form:input id="userName" path="userName" placeholder="User Name"
-							onleave="checkUserName(this)" required="true" />
+							onleave="checkUserName(this)" required="true" required aria-required="true"/>
 						<script type='text/javascript'>
 							function checkUserName(input) {
 								$.ajax({
@@ -100,10 +100,10 @@
 						</script>
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
-							placeholder="Password" required="true" />
+							placeholder="Password" required="true" required aria-required="true"/>
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"
-							placeholder="Confirm Password" required oninput="check(this)" />
+							placeholder="Confirm Password" required oninput="check(this)" required aria-required="true" />
 						<script type='text/javascript'>
 							function check(input) {
 								if (input.value != document
@@ -116,7 +116,7 @@
 								}
 							}
 						</script>
-						<input type="submit" />
+						<input type="submit" required aria-required="true" />
 					</form:form>
 				</article>
 			</section>
