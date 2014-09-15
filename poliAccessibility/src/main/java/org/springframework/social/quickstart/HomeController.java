@@ -165,6 +165,12 @@ public class HomeController {
 			subcat.add("Braille Embossers");
 			subcat.add("Screen Readers");
 		}
+		
+		if (type.equals("Hearing and Speech")) {
+			subcat.add("TDD and TTY");
+			subcat.add("Tone Control");
+			subcat.add("Voice Amplifiers");
+		}
 
 		model.addAttribute("subcategories", subcat);
 		model.addAttribute("type", type);
