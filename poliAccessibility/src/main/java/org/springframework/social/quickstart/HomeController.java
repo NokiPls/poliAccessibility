@@ -168,7 +168,7 @@ public class HomeController {
 		
 		if (type.equals("Hearing and Speech")) {
 			subcat.add("TDD and TTY");
-			subcat.add("Tone Control");
+			subcat.add("Amplifications Systems");
 			subcat.add("Voice Amplifiers");
 		}
 
