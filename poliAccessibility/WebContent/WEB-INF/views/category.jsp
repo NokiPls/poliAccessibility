@@ -39,7 +39,7 @@
 							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
 								Impaired</a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/products?type=Hearing%20and%Speech">Hearing
+							href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
 								and Speech</a></li>
 					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
