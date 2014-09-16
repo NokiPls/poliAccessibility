@@ -86,9 +86,9 @@ public class HomeController {
 	public @ResponseBody
 	String checkUsarName(@RequestParam(value = "userName") String userName, Model model) {
 		
-		String state= "false";
+		String state= "";
 		if (um.getUserByUserName(userName) != null) {
-			state="true";
+			state="username già usato";
 		} 
 		model.addAttribute("userName", state);
 		return state;

@@ -20,7 +20,7 @@
 <link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 
 <script type='text/javascript'>
-	function check(input) {
+	function check() {
 		if (input.value != document.getElementById('password').value) {
 			input.setCustomValidity('Password Must be Matching.');
 		} else {
@@ -34,7 +34,7 @@
 		$.ajax({
 			url : 'checkUserName?userName=' + userN.value,
 			success : function(data) {
-				 alert(data);
+				  $('#username').html(data);
 
 			}
 		})
@@ -106,6 +106,7 @@
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
 							required="true" />
+						<div id="username" aria-live="polite"></div>
 						<label>User Name:</label>
 						<form:input id="userName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true" />
