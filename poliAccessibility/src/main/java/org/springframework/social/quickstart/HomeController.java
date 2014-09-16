@@ -84,15 +84,14 @@ public class HomeController {
 
 	@RequestMapping(value = "/checkUserName", method = RequestMethod.GET)
 	public @ResponseBody
-	String checkUsarName(@RequestParam(value = "userName") String userName) {
-
-		if (um.getUserByUserName(userName) == null) {
-			// ok
-		} else {
-			// userName duplicato
-		}
-
-		return "checkUserName";
+	String checkUsarName(@RequestParam(value = "userName") String userName, Model model) {
+		
+		String state= "false";
+		if (um.getUserByUserName(userName) != null) {
+			state="true";
+		} 
+		model.addAttribute("userName", state);
+		return state;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
