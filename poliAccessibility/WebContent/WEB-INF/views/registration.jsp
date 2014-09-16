@@ -20,21 +20,21 @@
 <link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 
 <script type='text/javascript'>
-	function check() {
-		if (input.value != document.getElementById('password').value) {
-			input.setCustomValidity('Password Must be Matching.');
+	function checkPassw() {
+		if (document.getElementById('confirmPassword').value != document
+				.getElementById('password').value) {
+			document.getElementById("passw").innerHTML = 'Password Must be Matching.';
 		} else {
-			// input is valid -- reset the error message
-			input.setCustomValidity('');
+			document.getElementById("passw").innerHTML = '';
 		}
 	}
 
 	function checkUserName() {
-		 var userN = document.getElementById("userName");
+		var userN = document.getElementById("userName");
 		$.ajax({
 			url : 'checkUserName?userName=' + userN.value,
 			success : function(data) {
-				  $('#username').html(data);
+				$('#username').html(data);
 
 			}
 		})
@@ -114,9 +114,11 @@
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
+						<div id="passw" aria-live="polite"></div>
+
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"
-							placeholder="Confirm Password" required oninput="check(this)" />
+							placeholder="Confirm Password" required onblur="checkPassw()" />
 
 						<input type="submit" />
 					</form:form>
