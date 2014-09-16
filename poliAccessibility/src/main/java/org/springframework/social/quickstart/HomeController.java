@@ -84,12 +84,18 @@ public class HomeController {
 
 	@RequestMapping(value = "/checkUserName", method = RequestMethod.GET)
 	public @ResponseBody
-	String checkUsarName(@RequestParam(value = "userName") String userName, Model model) {
-		
-		String state= "";
+	String checkUsarName(@RequestParam(value = "userName") String userName,
+			Model model) {
+
+		String state = "";
+		String error = "Username already taken.";
+		String fine = "Username is now ok.";
+		if (state.equals(error)) {
+			state = fine;
+		}
 		if (um.getUserByUserName(userName) != null) {
-			state="username già usato";
-		} 
+			state = error;
+		}
 		model.addAttribute("userName", state);
 		return state;
 	}
@@ -129,9 +135,9 @@ public class HomeController {
 		model.addAttribute("product", currentProduct);
 		return "purchaseConfirm";
 	}
-	
-	@RequestMapping(value="/checkLogin", method = RequestMethod.GET)
-	public String checkLogin(Model model){
+
+	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
+	public String checkLogin(Model model) {
 		return "";
 	}
 
@@ -164,7 +170,7 @@ public class HomeController {
 			subcat.add("Braille Embossers");
 			subcat.add("Screen Readers");
 		}
-		
+
 		if (type.equals("Hearing and Speech")) {
 			subcat.add("TDD and TTY");
 			subcat.add("Amplifications Systems");

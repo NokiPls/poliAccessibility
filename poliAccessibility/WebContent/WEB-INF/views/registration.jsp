@@ -33,7 +33,8 @@
 		var userN = document.getElementById("userName");
 		$.ajax({
 			url : 'checkUserName?userName=' + userN.value,
-			success : function(data) {
+			success : function(
+	data) {
 				$('#username').html(data);
 
 			}
