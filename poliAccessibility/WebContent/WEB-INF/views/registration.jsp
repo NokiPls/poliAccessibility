@@ -106,7 +106,7 @@
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
 							required="true" />
-						<div id="username" aria-live="polite"></div>
+						<div id="username" aria-live="polite" class="error"></div>
 						<label>User Name:</label>
 						<form:input id="userName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true" />
@@ -114,7 +114,7 @@
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
-						<div id="passw" aria-live="polite"></div>
+						<div id="passw" aria-live="polite" class="error"></div>
 
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"

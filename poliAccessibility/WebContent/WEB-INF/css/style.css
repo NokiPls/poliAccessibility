@@ -232,6 +232,10 @@ label {
 	position: relative;
 	border-radius: 5px;
 }
+.error{
+	color:red;
+}
+
 
 .image img {
 	display: block;
