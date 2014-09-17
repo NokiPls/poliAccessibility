@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.access.domain.Product;
 
+
+@SuppressWarnings("rawtypes")
 public class GetRs implements ResultSetExtractor {
 
 	@Override

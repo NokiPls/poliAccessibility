@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 
 import com.access.domain.Person;
 
-
 /**
  * Implementation of the DAO. The configuration for the entity manager is
  * located in the dataSource-context.xml file.
@@ -25,7 +24,7 @@ import com.access.domain.Person;
 public class JpaUsersRepo implements UsersRepository {
 
 	List<Person> list;
-	
+
 	@PersistenceContext
 	public EntityManager em;
 
@@ -39,13 +38,15 @@ public class JpaUsersRepo implements UsersRepository {
 		// }
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Person findUserByUserName(String userName) {
 		list = new ArrayList<Person>();
-		Query query = em.createQuery("from com.access.domain.Person where userName = :userName ");
+		Query query = em
+				.createQuery("from com.access.domain.Person where userName = :userName ");
 		query.setParameter("userName", userName);
 		list = query.getResultList();
-		if (list.isEmpty()){
+		if (list.isEmpty()) {
 			return null;
 		}
 		Person p = list.get(0);

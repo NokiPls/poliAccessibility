@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 <title>Products</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -31,6 +31,7 @@
 				</a>
 			</h1>
 		</header>
+		<a class="hidden" href="#content">Skip to main content</a>
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
@@ -49,7 +50,6 @@
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
-
 		</nav>
 	</div>
 

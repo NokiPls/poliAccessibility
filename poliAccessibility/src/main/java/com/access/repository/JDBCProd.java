@@ -16,22 +16,20 @@ public class JDBCProd implements ProductsDao {
 		dataSource = ds;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> selectCategory(String category) {
 		JdbcTemplate select = new JdbcTemplate(dataSource);
-		return select
-				.query("select * from PRODUCT where CATEGORY = ?",
-						new Object[] { category },
-						new Mapper());
+		return select.query("select * from PRODUCT where CATEGORY = ?",
+				new Object[] { category }, new Mapper());
 	}
-	
+
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Product> selectType(String type){
+	public List<Product> selectType(String type) {
 		JdbcTemplate select = new JdbcTemplate(dataSource);
-		return select
-				.query("select * from PRODUCT where PRODUCTTYPE = ?",
-						new Object[] { type },
-						new Mapper());
+		return select.query("select * from PRODUCT where PRODUCTTYPE = ?",
+				new Object[] { type }, new Mapper());
 	}
 
 }
