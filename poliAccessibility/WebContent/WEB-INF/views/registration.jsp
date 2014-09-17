@@ -24,8 +24,10 @@
 		if (document.getElementById('confirmPassword').value != document
 				.getElementById('password').value) {
 			document.getElementById("passw").innerHTML = 'Password Must be Matching.';
+			document.getElementById("formSubmit").disabled = true;
 		} else {
 			document.getElementById("passw").innerHTML = '';
+			document.getElementById("formSubmit").disabled = false;
 		}
 	}
 
@@ -92,44 +94,43 @@
 					<c:url var="url" value="/person" />
 					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
-						<div id="name" class="error">${nameError}</div>
+						<div id="nameError" class="error">${nameError}</div>
 						<label>First Name:</label>
 						<form:input path="name" placeholder="First Name" required="true"
 							value="${person.name}" autofocus="true" />
-						<div id="surname" class="error">${surnameError}</div>
+						<div id="surnameError" class="error">${surnameError}</div>
 						<label>Surname:</label>
 						<form:input path="surname" placeholder="Surname" required="true"
 							value="${person.surname}" />
-						<div id="address" class="error">${addressError}</div>
+						<div id="addressError" class="error">${addressError}</div>
 						<label>Address:</label>
 						<form:input path="address" placeholder="Address" required="true"
 							value="${person.address}" />
-						<div id="ccn" class="error">${ccnError}</div>
+						<div id="ccnError" class="error">${ccnError}</div>
 						<label>Ccn:</label>
 						<form:input path="ccn" placeholder="Ccn" required="true"
 							value="${person.ccn}" />
-						<div id="ccexp" class="error">${ccexpError}</div>
+						<div id="ccexpError" class="error">${ccexpError}</div>
 						<label>Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
 							required="true" value="${person.ccexp}" />
-						<div id="username" aria-live="polite" class="error">${userNameError}</div>
+						<div id="usernameError" aria-live="polite" class="error">${userNameError}</div>
 						<label>User Name:</label>
 						<form:input id="userName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true"
 							value="${person.userName}" />
-						<div id="password" class="error">${passwordError}</div>
+						<div id="passwordError" class="error">${passwordError}</div>
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
 						<div id="passw" aria-live="polite" class="error"></div>
-
 						<label>Confirm Password:</label>
 						<input id="confirmPassword" type="password"
 							placeholder="Confirm Password" required onblur="checkPassw()" />
 
-						<input type="submit" />
+						<input id="formSubmit" type="submit" />
 					</form:form>
 				</article>
 			</section>
