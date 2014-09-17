@@ -65,26 +65,93 @@ public class HomeController {
 	public String registrationFormEvaluation(
 			@Valid @ModelAttribute Person personForm, BindingResult result,
 			Model model) {
-		
+
 		String userNameError = "Username already taken.";
-		
+		String nameError = "It is mandatory to insert your name.";
+		String surnameError = "It is mandatory to insert your surname.";
+		String addressError = "It is mandatory to insert an address.";
+		String ccnError = "It is mandatory to insert a credit card number.";
+		String ccexpError = "It is mandatory to insert the expiration date in MM/YY format.";
+		String userNameError2 = "It is mandatory to choose a username.";
+
+//		String passwordError = "The two passwords are not matching.";
+
 		if (result.hasErrors()) {
 			model.addAttribute("personForm", new Person());
 			return "registration";
 		}
-		if (um.getUserByUserName(personForm.getUserName()) == null) {
-			userNameError = "";
+
+		if (personForm.getName() == null || personForm.getName().equals("")) {
+			model.addAttribute("nameError", nameError);
+		} else {
+			model.addAttribute("nameError", "");
+		}
+
+		if (personForm.getSurname() == null
+				|| personForm.getSurname().equals("")) {
+			model.addAttribute("surnameError", surnameError);
+		} else {
+			model.addAttribute("surnameError", "");
+		}
+
+		if (personForm.getAddress() == null
+				|| personForm.getAddress().equals("")) {
+			model.addAttribute("addressError", addressError);
+		} else {
+			model.addAttribute("addressError", "");
+		}
+
+		if (personForm.getCcn() == 0) {
+			model.addAttribute("ccnError", ccnError);
+		} else {
+			model.addAttribute("ccnError", "");
+		}
+
+		if (personForm.getCcexp() == null || personForm.getCcexp().equals("")) {
+			model.addAttribute("ccexpError", ccexpError);
+		} else {
+			model.addAttribute("ccexpError", "");
+		}
+
+		if (personForm.getUserName() == null
+				|| personForm.getUserName().equals("")) {
+			model.addAttribute("userNameError2", userNameError2);
+		} else {
+			model.addAttribute("userNameError2", "");
+			if (um.getUserByUserName(personForm.getUserName()) != null) {
+				model.addAttribute("userNameError", userNameError);
+			} else {
+				System.out.println("Duplicate userName found !!!");
+				model.addAttribute("userNameError", "");
+			}
+		}
+
+		if (userNameError.equals("") && userNameError2.equals("")
+				&& nameError.equals("") && surnameError.equals("")
+				&& addressError.equals("") && ccnError.equals("")
+				&& ccexpError.equals("")) {
 			um.saveUser(personForm);
 			model.addAttribute("name", personForm.getName());
 			model.addAttribute("surname", personForm.getSurname());
 			return "registrationSuccessful";
 		} else {
-			System.out.println("Duplicate userName found !!!");
 			model.addAttribute("personForm", new Person());
 			model.addAttribute("person", personForm);
-			model.addAttribute("userNameError", userNameError);
 			return "registration";
 		}
+
+		// if (um.getUserByUserName(personForm.getUserName()) == null) {
+		// um.saveUser(personForm);
+		// model.addAttribute("name", personForm.getName());
+		// model.addAttribute("surname", personForm.getSurname());
+		// return "registrationSuccessful";
+		// } else {
+		// System.out.println("Duplicate userName found !!!");
+		// model.addAttribute("personForm", new Person());
+		// model.addAttribute("person", personForm);
+		// model.addAttribute("userNameError", userNameError);
+		// return "registration";
+		// }
 
 	}
 
