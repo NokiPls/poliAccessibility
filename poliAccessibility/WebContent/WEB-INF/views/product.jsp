@@ -62,26 +62,30 @@
 					<header>
 						<h1>${product.prodName}</h1>
 						<br>
-						<p>${product.briefDescription} ${product.longDescription}</p>
+						<p>${product.briefDescription}${product.longDescription}</p>
 						<br> <br>
 						<p>${product.price}</p>
 						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
 
 					</header>
 
-					<span class="image featured"><img src="<c:url value="/img/${product.imageURL}"/>"
+					<span class="image featured"><img
+						src="<c:url value="/img/${product.imageURL}"/>"
 						alt="Always provide alt text for accessibility ;-)" /></span>
 					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>
+						<caption>Specs Table</caption>
 						<tr>
-							<th>NAME</th>
-							<th>FEATURES</th>
-							<th>COMPATIBILITY</th>
+							<th id="name" scope="row">NAME</th>
+							<td headers="name">${product.prodName}</td>
 						</tr>
 						<tr>
-							<td>${product.prodName}</td>
-							<td>${product.features}</td>
-							<td>${product.compatibility}</td>
+							<th id="features" scope="row">FEATURES</th>
+							<td headers="features">${product.features}</td>
+						</tr>
+						<tr>
+							<th id="compatibility" scope="row">COMPATIBILITY</th>
+							<td headers="compatibility">${product.compatibility}</td>
 						</tr>
 					</table>
 				</article>
