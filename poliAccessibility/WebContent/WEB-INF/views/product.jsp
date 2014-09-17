@@ -65,13 +65,14 @@
 						<p>${product.briefDescription}${product.longDescription}</p>
 						<br> <br>
 						<p>${product.price}</p>
-						<br> <a href="${pageContext.request.contextPath}/login">Buy</a><br>
+						<br> <a href="${pageContext.request.contextPath}/login">Login
+							to Buy</a><br>
 
 					</header>
 
 					<span class="image featured"><img
 						src="<c:url value="/img/${product.imageURL}"/>"
-						alt="Always provide alt text for accessibility ;-)" /></span>
+						alt="Image of the product" /></span>
 					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>
 						<caption>Specs Table</caption>

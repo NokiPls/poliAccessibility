@@ -66,7 +66,8 @@
 						<br>
 						<p>accessibility project</p>
 					</header>
-					<span class="image featured"><img src="<c:url value="/img/download.jpg" />"
+					<span class="image featured"><img
+						src="<c:url value="/img/download.jpg" />"
 						alt="Always provide alt text for accessibility ;-)" /></span>
 
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
