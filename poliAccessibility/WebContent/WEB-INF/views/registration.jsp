@@ -94,22 +94,26 @@
 						modelAttribute="personForm">
 						<label>First Name:</label>
 						<form:input path="name" placeholder="First Name" required="true"
-							autofocus="true" />
+							value="${person.name}" autofocus="true" />
 						<label>Surname:</label>
-						<form:input path="surname" placeholder="Surname" required="true" />
+						<form:input path="surname" placeholder="Surname" required="true"
+							value="${person.surname}" />
 						<label>Address:</label>
-						<form:input path="address" placeholder="Address" required="true" />
+						<form:input path="address" placeholder="Address" required="true"
+							value="${person.address}" />
 						<label>Ccn:</label>
-						<form:input path="ccn" placeholder="Ccn" required="true" />
+						<form:input path="ccn" placeholder="Ccn" required="true"
+							value="${person.ccn}" />
 						<label>Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
-							required="true" />
-						<div id="username" aria-live="polite" class="error"></div>
+							required="true" value="${person.ccexp}" />
+						<div id="username" aria-live="polite" class="error">${userNameError}</div>
 						<label>User Name:</label>
 						<form:input id="userName" path="userName" placeholder="User Name"
-							onblur="checkUserName()" required="true" />
+							onblur="checkUserName()" required="true"
+							value="${person.userName}" />
 
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"

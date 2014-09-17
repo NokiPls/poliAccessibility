@@ -65,11 +65,15 @@ public class HomeController {
 	public String registrationFormEvaluation(
 			@Valid @ModelAttribute Person personForm, BindingResult result,
 			Model model) {
+		
+		String userNameError = "Username already taken.";
+		
 		if (result.hasErrors()) {
 			model.addAttribute("personForm", new Person());
 			return "registration";
 		}
 		if (um.getUserByUserName(personForm.getUserName()) == null) {
+			userNameError = "";
 			um.saveUser(personForm);
 			model.addAttribute("name", personForm.getName());
 			model.addAttribute("surname", personForm.getSurname());
@@ -77,6 +81,8 @@ public class HomeController {
 		} else {
 			System.out.println("Duplicate userName found !!!");
 			model.addAttribute("personForm", new Person());
+			model.addAttribute("person", personForm);
+			model.addAttribute("userNameError", userNameError);
 			return "registration";
 		}
 

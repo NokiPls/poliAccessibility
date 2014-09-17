@@ -74,9 +74,10 @@
 							</p>
 						</header>
 
-						<span class="image featured"><img
-							src="<c:url value="/img/${i.imageURL}"/>"
-							alt="Always provide alt text for accessibility ;-)" /></span> <a
+						<span class="image featured"><a
+							href="${pageContext.request.contextPath}/product?i=${status.index}"><img
+								src="<c:url value="/img/${i.imageURL}"/>"
+								alt="Always provide alt text for accessibility ;-)" /></a></span> <a
 							href="${pageContext.request.contextPath}/product?i=${status.index}">See
 							more details</a>
 
