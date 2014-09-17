@@ -92,18 +92,23 @@
 					<c:url var="url" value="/person" />
 					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
+						<div id="name" class="error">${nameError}</div>
 						<label>First Name:</label>
 						<form:input path="name" placeholder="First Name" required="true"
 							value="${person.name}" autofocus="true" />
+						<div id="surname" class="error">${surnameError}</div>
 						<label>Surname:</label>
 						<form:input path="surname" placeholder="Surname" required="true"
 							value="${person.surname}" />
+						<div id="address" class="error">${addressError}</div>
 						<label>Address:</label>
 						<form:input path="address" placeholder="Address" required="true"
 							value="${person.address}" />
+						<div id="ccn" class="error">${ccnError}</div>
 						<label>Ccn:</label>
 						<form:input path="ccn" placeholder="Ccn" required="true"
 							value="${person.ccn}" />
+						<div id="ccexp" class="error">${ccexpError}</div>
 						<label>Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
@@ -114,7 +119,7 @@
 						<form:input id="userName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true"
 							value="${person.userName}" />
-
+						<div id="password" class="error">${passwordError}</div>
 						<label>Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
