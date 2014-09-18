@@ -80,12 +80,12 @@
 						<form:input type="password" placeholder="Password" path="passw"
 							required="true" />
 
-						<p>${error}</p>
+						<div class="error">${error}</div>
 
 						<input type="submit" />
 					</form:form>
 
-					<p>Not registered yet?</p>
+					<h3>Not registered yet?</h3>
 					<br> <a
 						href="${pageContext.request.contextPath}/userRegistration">Register
 						an account.</a>

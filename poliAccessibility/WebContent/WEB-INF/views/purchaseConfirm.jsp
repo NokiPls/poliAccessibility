@@ -61,7 +61,7 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h1>${product.prodName}</h1>
+						<h2>${product.prodName}</h2>
 						<br>
 					</header>
 
@@ -69,10 +69,14 @@
 					<br> <span class="image featured"><img
 						src="<c:url value="/img/${i.imageURL}"/>"
 						alt="Always provide alt text for accessibility ;-)" /></span><br>
-					<p>${product.price}</p>
+					<h2>${product.price}</h2>
+					<br>
+					<h3>Your currently set address:</h3>
 					<br>
 					<p>${person.address}</p>
-					<br> <label>Different Address:</label> <input
+					<br>
+					<h3>Do you want the product delivered at a different address?</h3>
+					<br> <label>Different Address for delivery:</label> <input
 						placeholder="New Address" />
 					<form action="${pageContext.request.contextPath}/orderSuccess">
 						<input type="submit" value="Confirm and Buy">

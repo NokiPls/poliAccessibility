@@ -61,7 +61,7 @@
 				<!-- Content -->
 				<article role=article>
 					<header>
-						<h1>Success</h1>
+						<h1>Order issued succesfully.</h1>
 						<br>
 					</header>
 

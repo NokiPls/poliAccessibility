@@ -65,10 +65,9 @@
 						<br>
 						<p>${product.briefDescription}${product.longDescription}</p>
 						<br> <br>
-						<p>${product.price}</p>
+						<h2>${product.price}</h2>
 						<br> <a href="${pageContext.request.contextPath}/login">Login
 							to Buy</a><br>
-
 					</header>
 
 					<span class="image featured"><img

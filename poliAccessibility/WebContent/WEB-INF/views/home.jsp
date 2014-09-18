@@ -64,7 +64,7 @@
 					<header>
 						<h2>Accessible E-commerce</h2>
 						<br>
-						<p>accessibility project</p>
+						<h3>accessibility project</h3>
 					</header>
 					<span class="image featured"><img
 						src="<c:url value="/img/download.jpg" />"

@@ -75,9 +75,9 @@
 						<c:forEach var="i" items="${product}" varStatus="status">
 							<article role=article>
 								<header>
-									<h2>
+									<h1>
 										<c:out value="${i.prodName}"></c:out>
-									</h2>
+									</h1>
 									<br>
 									<p>
 										<c:out value="${i.briefDescription}"></c:out>
