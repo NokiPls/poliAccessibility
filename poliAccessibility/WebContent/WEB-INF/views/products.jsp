@@ -36,7 +36,8 @@
 		<nav id="nav" role="navigation">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li class="current"><a
+					href="${pageContext.request.contextPath}/allProducts">Products</a>
 					<ul>
 						<li><a
 							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision

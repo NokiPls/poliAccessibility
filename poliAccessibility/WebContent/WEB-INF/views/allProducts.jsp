@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-<title>Purchase</title>
+<title>Products</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -31,6 +31,7 @@
 				</a>
 			</h1>
 		</header>
+		<a class="hidden" href="#content">Skip to main content</a>
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
@@ -50,7 +51,6 @@
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
 			</ul>
-
 		</nav>
 	</div>
 
@@ -58,29 +58,44 @@
 	<div class="wrapper style1">
 		<div class="container">
 			<section id="content" role="main">
+
 				<!-- Content -->
+
 				<article role=article>
 					<header>
-						<h1>${product.prodName}</h1>
-						<br>
+						<ul>
+							<c:forEach var="i" items="${types}" varStatus="status">
+								<li><a
+									href="${pageContext.request.contextPath}/products?type=${i}">${i}</a>
+								</li>
+							</c:forEach>
+						</ul>
 					</header>
-
-					<p>${product.briefDescription}</p>
-					<br> <span class="image featured"><img
-						src="<c:url value="/img/${i.imageURL}"/>"
-						alt="Always provide alt text for accessibility ;-)" /></span><br>
-					<p>${product.price}</p>
-					<br>
-					<p>${person.address}</p>
-					<br> <label>Different Address:</label> <input
-						placeholder="New Address" />
-					<form action="${pageContext.request.contextPath}/orderSuccess">
-						<input type="submit" value="Confirm and Buy">
-					</form>
+					<section id="content" role="main">
+						<c:forEach var="i" items="${product}" varStatus="status">
+							<article role=article>
+								<header>
+									<h2>
+										<c:out value="${i.prodName}"></c:out>
+									</h2>
+									<br>
+									<p>
+										<c:out value="${i.briefDescription}"></c:out>
+									</p>
+								</header>
+								<span class="image featured"><a
+									href="${pageContext.request.contextPath}/product?i=${status.index}"><img
+										src="<c:url value="/img/${i.imageURL}"/>" alt="" /></a></span> <a
+									href="${pageContext.request.contextPath}/product?i=${status.index}">See
+									more details</a>
+							</article>
+						</c:forEach>
+					</section>
 				</article>
 			</section>
 		</div>
 	</div>
+
 
 	<!-- Footer -->
 

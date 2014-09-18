@@ -36,7 +36,8 @@
 		<nav id="nav" role="navigation">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
-				<li class="current"><a href="">Products</a>
+				<li class="current"><a
+					href="${pageContext.request.contextPath}/allProducts">Products</a>
 					<ul>
 						<li><a
 							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
@@ -73,8 +74,8 @@
 					<c:url var="url" value="/person" />
 					<form:form action="login" method="post" modelAttribute="personForm">
 						<label>User Name:</label>
-						<form:input path="userName" placeholder="User Name" value="${userName}"
-							required="true" />
+						<form:input path="userName" placeholder="User Name"
+							value="${userName}" required="true" />
 						<label>Password:</label>
 						<form:input type="password" placeholder="Password" path="passw"
 							required="true" />
