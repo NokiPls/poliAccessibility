@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.bouncycastle.ocsp.Req;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -227,6 +228,18 @@ public class HomeController {
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
 	public String checkLogin(Model model) {
 		return "";
+	}
+
+	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
+	public String allProducts(Model model) {
+		products = new ArrayList<Product>();
+		products = pf.findAllProducts();
+		List<String> types = new ArrayList<String>();
+		types.add("Vision Impaired");
+		types.add("Hearing and Speech");
+		model.addAttribute("product", products);
+		model.addAttribute("types", types);
+		return "allProducts";
 	}
 
 	// Le categorie sono hard coded nel jsp.

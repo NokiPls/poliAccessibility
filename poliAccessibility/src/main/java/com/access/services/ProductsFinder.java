@@ -33,8 +33,12 @@ public class ProductsFinder implements ProductsFinderInterface {
 	}
 
 	@Override
-	public List<Product> findProductsByType(String type){
+	public List<Product> findProductsByType(String type) {
 		return dao.selectType(type);
 	}
-	
+
+	@Override
+	public List<Product> findAllProducts() {
+		return dao.selectAll();
+	}
 }

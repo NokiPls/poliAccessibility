@@ -58,6 +58,13 @@
 		<div class="container">
 			<section id="content" role="main">
 
+				<h2>
+					<a href="${pageContext.request.contextPath}/allProducts">All
+						Products</a> > <a
+						href="${pageContext.request.contextPath}/products?type=${type}">${type}</a>
+					> ${categ}
+				</h2>
+
 				<!-- Content -->
 
 				<article role=article>

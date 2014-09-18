@@ -32,4 +32,12 @@ public class JDBCProd implements ProductsDao {
 				new Object[] { type }, new Mapper());
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Product> selectAll() {
+		JdbcTemplate select = new JdbcTemplate(dataSource);
+		return select.query("select * from PRODUCT", new Object[] {},
+				new Mapper());
+	}
+
 }
