@@ -57,50 +57,62 @@
 	<!-- Main -->
 	<div class="wrapper style1">
 		<div class="container">
-			<section id="content" role="main">
-
-				<h2>
-					<a href="${pageContext.request.contextPath}/allProducts">All
-						Products</a> > <a
-						href="${pageContext.request.contextPath}/products?type=${type}">${type}</a>
-				</h2>
-
-				<!-- Content -->
-
-				<article role=article>
-					<header>
-						<ul>
-							<li><a
-								href="${pageContext.request.contextPath}/products?type=${type}">${type}</a></li>
-							<c:forEach var="i" items="${subcategories}" varStatus="status">
-								<li><a
-									href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
-								</li>
-							</c:forEach>
-						</ul>
-					</header>
+			<div class="row double">
+				<div class="4u">
+					<div id="sidebar">
+						<section>
+							<ul>
+								<c:forEach var="i" items="${subcategories}" varStatus="status">
+									<li><a
+										href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
+									</li>
+								</c:forEach>
+							</ul>
+						</section>
+					</div>
+				</div>
+				<div class="8u skel-cell-important">
 					<section id="content" role="main">
-						<c:forEach var="i" items="${product}" varStatus="status">
-							<article role=article>
-								<header>
-									<h2>
-										<c:out value="${i.prodName}"></c:out>
-									</h2>
-									<br>
-									<p>
-										<c:out value="${i.briefDescription}"></c:out>
-									</p>
-								</header>
-								<span class="image featured"><a
-									href="${pageContext.request.contextPath}/product?i=${status.index}"><img
-										src="<c:url value="/img/${i.imageURL}"/>" alt="" /></a></span> <a
-									href="${pageContext.request.contextPath}/product?i=${status.index}">See
-									more details</a>
-							</article>
-						</c:forEach>
+
+						<h2>
+							<a href="${pageContext.request.contextPath}/allProducts">All
+								Products</a> > ${type}
+						</h2>
+
+						<!-- Content -->
+
+						<article role=article>
+							<header> </header>
+							<section id="content" role="main">
+								<c:forEach var="i" items="${product}" varStatus="status">
+									<article role=article>
+										<section class="6u">
+											<div class="box post">
+												<a class="image left"
+													href="${pageContext.request.contextPath}/product?i=${status.index}"><img
+													src="<c:url value="/img/${i.imageURL}"/>" alt="" /></a>
+												<div class="inner">
+													<h3>
+														<c:out value="${i.prodName}"></c:out>
+													</h3>
+													<br>
+													<p>
+														<c:out value="${i.briefDescription}"></c:out>
+													</p>
+													<a
+														href="${pageContext.request.contextPath}/product?i=${status.index}">See
+														more details</a>
+												</div>
+
+											</div>
+										</section>
+									</article>
+								</c:forEach>
+							</section>
+						</article>
 					</section>
-				</article>
-			</section>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -114,6 +126,5 @@
 
 		</footer>
 	</div>
-
 </body>
 </html>

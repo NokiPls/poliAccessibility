@@ -64,10 +64,10 @@
 						<h1>${product.prodName}</h1>
 						<br>
 						<p>${product.briefDescription}${product.longDescription}</p>
-						<br> <br>
+						<br>
 						<h2>${product.price}</h2>
 						<br> <a href="${pageContext.request.contextPath}/login">Login
-							to Buy</a><br>
+							to Buy</a>
 					</header>
 
 					<span class="image featured"><img
