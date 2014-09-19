@@ -40,14 +40,6 @@
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
 				<li class="current"><a
 					href="${pageContext.request.contextPath}/allProducts">Products</a>
-					<ul>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
-								Impaired</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
-								and Speech</a></li>
-					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 						Us</a></li>
 				<li><a
@@ -62,15 +54,13 @@
 			<div class="row double">
 				<div class="4u">
 					<div id="sidebar">
-						<section>
-							<ul>
-								<c:forEach var="i" items="${types}" varStatus="status">
-									<li><a
-										href="${pageContext.request.contextPath}/products?type=${i}">${i}</a>
-									</li>
-								</c:forEach>
-							</ul>
-						</section>
+						<c:forEach var="i" items="${types}" varStatus="status">
+							<section>
+								<h3>
+									<a href="${pageContext.request.contextPath}/products?type=${i}">${i}</a>
+								</h3>
+							</section>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="8u skel-cell-important">
@@ -113,15 +103,20 @@
 		</div>
 	</div>
 
-
 	<!-- Footer -->
 
 	<div id="footer">
-		<footer class="copyright" role="contentinfo">
-
-			<p>Accessibility project 2013/14</p>
-
-		</footer>
+		<div class="container">
+			<div class="row ">
+				<div class="6u">
+					<div class="row collapse-at-2">
+						<section class="6u">
+							<h3>Accessibility project 2013/14</h3>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

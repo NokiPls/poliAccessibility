@@ -14,9 +14,11 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
-<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
-<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+<noscript>
+	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+</noscript>
 </head>
 <body>
 
@@ -38,14 +40,6 @@
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
 				<li class="current"><a
 					href="${pageContext.request.contextPath}/allProducts">Products</a>
-					<ul>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
-								Impaired</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
-								and Speech</a></li>
-					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 						Us</a></li>
 				<li><a
@@ -60,24 +54,23 @@
 			<div class="row double">
 				<div class="4u">
 					<div id="sidebar">
-						<section>
-							<ul>
-								<c:forEach var="i" items="${subcategories}" varStatus="status">
-									<li><a
+						<c:forEach var="i" items="${subcategories}" varStatus="status">
+							<section>
+								<h3>
+									<a
 										href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
-									</li>
-								</c:forEach>
-							</ul>
-						</section>
+								</h3>
+							</section>
+						</c:forEach>
 					</div>
 				</div>
 				<div class="8u skel-cell-important">
 					<section id="content" role="main">
 
-						<h2>
+						<h3>
 							<a href="${pageContext.request.contextPath}/allProducts">All
 								Products</a> > ${type}
-						</h2>
+						</h3>
 
 						<!-- Content -->
 
@@ -120,11 +113,17 @@
 	<!-- Footer -->
 
 	<div id="footer">
-		<footer class="copyright" role="contentinfo">
-
-			<p>Accessibility project 2013/14</p>
-
-		</footer>
+		<div class="container">
+			<div class="row ">
+				<div class="6u">
+					<div class="row collapse-at-2">
+						<section class="6u">
+							<h3>Accessibility project 2013/14</h3>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
