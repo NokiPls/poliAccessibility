@@ -103,9 +103,17 @@
 
 	<div id="footer">
 		<footer class="copyright" role="contentinfo">
-
-			<p>Accessibility project 2013/14</p>
-
+			<div class="container">
+				<div class="row ">
+					<div class="6u">
+						<div class="row collapse-at-2">
+							<section class="6u">
+								<p>Accessibility project 2013/14</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</div>
 
