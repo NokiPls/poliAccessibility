@@ -14,9 +14,11 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
-<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
-<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+<noscript>
+	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+</noscript>
 </head>
 <body>
 
@@ -78,7 +80,7 @@
 
 						<article role=article>
 							<header> </header>
-							<section id="content" role="main">
+							<section id="content">
 								<c:forEach var="i" items="${product}" varStatus="status">
 									<article role=article>
 										<section class="6u">

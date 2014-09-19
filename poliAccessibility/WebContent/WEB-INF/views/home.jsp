@@ -26,25 +26,20 @@
 	<div id="header">
 
 		<!-- Logo  aggiunta nav-->
-		<h1 role="banner">
-			<a href="${pageContext.request.contextPath}/" id="logo">E-commerce
-				<em>accessibility</em>
-			</a>
-		</h1>
+		<header role="banner">
+			<h1>
+				<a href="${pageContext.request.contextPath}/" id="logo">E-commerce
+					<em>accessibility</em>
+				</a>
+			</h1>
+		</header>
+		<a class="hidden" href="#content">Skip to main content</a>
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
 				<li class="current"><a
 					href="${pageContext.request.contextPath}/">Homepage</a></li>
 				<li><a href="${pageContext.request.contextPath}/allProducts">Products</a>
-					<ul>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
-								Impaired</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
-								and Speech</a></li>
-					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 						Us</a></li>
 				<li><a
@@ -61,22 +56,26 @@
 					<div id="sidebar">
 
 						<!-- Sidebar -->
-
 						<section>
-							<h3>Just a Subheading</h3>
-							<p>Phasellus quam turpis, feugiat sit amet ornare in,
-								hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu
-								ante risus. Aliquam erat volutpat. Aliquam luctus et mattis
-								lectus sit amet pulvinar. Nam turpis et nisi etiam.</p>
-							<footer>
-								<a href="#" class="button">Continue Reading</a>
-							</footer>
+							<h3>
+								<a
+									href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
+									Impaired</a>
+							</h3>
+						</section>
+						<section>
+							<h3>
+								<a
+									href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
+									and Speech</a>
+							</h3>
+
 						</section>
 					</div>
 				</div>
 
 				<div class="8u skel-cell-important">
-					<div id="content">
+					<section id="content" role="main">
 						<!-- Content -->
 						<article role=article>
 							<header>
@@ -111,10 +110,11 @@
 								tincidunt vitae arcu. Vestibulum purus augue, tincidunt sit amet
 								iaculis id, porta eu purus.</p>
 						</article>
-					</div>
+					</section>
 				</div>
 			</div>
 		</div>
+
 	</section>
 
 
