@@ -53,7 +53,7 @@
 		<div class="container">
 			<div class="row double">
 				<div class="4u">
-					<div id="sidebar">
+					<div id="sidebar"  role="complementary">
 						<c:forEach var="i" items="${types}" varStatus="status">
 							<section>
 								<h3>

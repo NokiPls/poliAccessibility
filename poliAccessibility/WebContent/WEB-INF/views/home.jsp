@@ -34,6 +34,7 @@
 			</h1>
 		</header>
 		<a class="hidden" href="#content">Skip to main content</a>
+		
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
@@ -53,7 +54,7 @@
 		<div class="container">
 			<div class="row double">
 				<div class="4u">
-					<div id="sidebar">
+					<div id="sidebar" role="complementary">
 
 						<!-- Sidebar -->
 						<section>
@@ -80,7 +81,7 @@
 						<article role=article>
 							<header>
 								<h2>Accessible E-commerce</h2>
-								<p>accessibility project</p>
+								<h3>accessibility project</h3>
 							</header>
 							<span class="image featured"><img
 								src="<c:url value="/img/download.jpg" />"
