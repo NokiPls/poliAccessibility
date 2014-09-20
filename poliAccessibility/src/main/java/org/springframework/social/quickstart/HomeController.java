@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.bouncycastle.ocsp.Req;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
@@ -246,8 +245,29 @@ public class HomeController {
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {
+
 		products = new ArrayList<Product>();
+		List<String> subcatV = new ArrayList<String>();
+		List<String> subcatH = new ArrayList<String>();
+
 		products = pf.findProductsByCategory(category);
+
+		if (type.equals("Vision Impaired")) {
+			subcatV.add("Braille Displays");
+			subcatV.add("Braille Embossers");
+			subcatV.add("Screen Readers");
+		}
+
+		if (type.equals("Hearing and Speech")) {
+			subcatH.add("TDD and TTY");
+			subcatH.add("Amplifications Systems");
+			subcatH.add("Voice Amplifiers");
+		}
+
+		model.addAttribute("subcategoriesV", subcatV);
+		model.addAttribute("subcategoriesH", subcatH);
+		model.addAttribute("v", "Vision Impaired");
+		model.addAttribute("h", "Hearing and Speech");
 		model.addAttribute("product", products);
 		model.addAttribute("categ", category);
 		model.addAttribute("type", this.type);
@@ -264,21 +284,25 @@ public class HomeController {
 
 		this.type = type;
 
-		List<String> subcat = new ArrayList<String>();
+		List<String> subcatV = new ArrayList<String>();
+		List<String> subcatH = new ArrayList<String>();
 
 		if (type.equals("Vision Impaired")) {
-			subcat.add("Braille Displays");
-			subcat.add("Braille Embossers");
-			subcat.add("Screen Readers");
+			subcatV.add("Braille Displays");
+			subcatV.add("Braille Embossers");
+			subcatV.add("Screen Readers");
 		}
 
 		if (type.equals("Hearing and Speech")) {
-			subcat.add("TDD and TTY");
-			subcat.add("Amplifications Systems");
-			subcat.add("Voice Amplifiers");
+			subcatH.add("TDD and TTY");
+			subcatH.add("Amplifications Systems");
+			subcatH.add("Voice Amplifiers");
 		}
 
-		model.addAttribute("subcategories", subcat);
+		model.addAttribute("subcategoriesV", subcatV);
+		model.addAttribute("subcategoriesH", subcatH);
+		model.addAttribute("v", "Vision Impaired");
+		model.addAttribute("h", "Hearing and Speech");
 		model.addAttribute("type", type);
 		model.addAttribute("product", products);
 		return "products";

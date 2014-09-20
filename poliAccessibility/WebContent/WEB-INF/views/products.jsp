@@ -54,14 +54,32 @@
 			<div class="row double">
 				<div class="4u">
 					<div id="sidebar">
-						<c:forEach var="i" items="${subcategories}" varStatus="status">
-							<section>
-								<h3>
-									<a
-										href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
-								</h3>
-							</section>
-						</c:forEach>
+						<section>
+							<h3>
+								<a href="${pageContext.request.contextPath}/products?type=${v}">${v}</a>
+							</h3>
+							<c:forEach var="i" items="${subcategoriesV}" varStatus="status">
+								<section>
+									<h4>
+										<a
+											href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
+									</h4>
+								</section>
+							</c:forEach>
+						</section>
+						<section>
+							<h3>
+								<a href="${pageContext.request.contextPath}/products?type=${h}">${h}</a>
+							</h3>
+							<c:forEach var="i" items="${subcategoriesH}" varStatus="status">
+								<section>
+									<h4>
+										<a
+											href="${pageContext.request.contextPath}/category?category=${i}">${i}</a>
+									</h4>
+								</section>
+							</c:forEach>
+						</section>
 					</div>
 				</div>
 				<div class="8u skel-cell-important">
