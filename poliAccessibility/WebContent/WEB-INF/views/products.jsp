@@ -95,7 +95,7 @@
 						<article role=article>
 							<header> </header>
 							<section id="content" role="main">
-								<c:forEach var="i" items="${product}" varStatus="status">
+								<c:forEach var="i" items="${products}" varStatus="status">
 									<article role=article>
 										<section class="6u">
 											<div class="box post">
