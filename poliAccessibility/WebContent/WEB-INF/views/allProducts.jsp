@@ -77,7 +77,7 @@
 											<div class="box post">
 												<a class="image left"
 													href="${pageContext.request.contextPath}/product?i=${status.index}"><img
-													src="<c:url value="/img/${i.imageURL}"/>" alt="" /></a>
+													src="<c:url value="/img/${i.imageURL}"/>" alt="Image of the product" /></a>
 												<div class="inner">
 													<h3>
 														<c:out value="${i.prodName}"></c:out>

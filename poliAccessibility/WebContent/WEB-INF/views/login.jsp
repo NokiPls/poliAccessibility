@@ -73,12 +73,12 @@
 
 					<c:url var="url" value="/person" />
 					<form:form action="login" method="post" modelAttribute="personForm">
-						<label>User Name:</label>
+						<label for="userName">User Name:</label>
 						<form:input path="userName" placeholder="User Name"
-							value="${userName}" required="true" />
-						<label>Password:</label>
+							value="${userName}" required="true" id="userName" />
+						<label for="passw">Password:</label>
 						<form:input type="password" placeholder="Password" path="passw"
-							required="true" />
+							required="true" id="passw" />
 
 						<div class="error">${error}</div>
 

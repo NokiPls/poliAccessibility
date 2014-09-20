@@ -47,9 +47,12 @@
 
 	<!-- Header  ho modificato div in header e aggiunto il ruolo-->
 	<div id="header">
-
+		<h2><button class="btn">text size</button>
+			<button class="btn">High Contrast</button>
+		</h2>
 		<!-- Logo  aggiunta nav-->
 		<header role="banner">
+
 			<h1>
 				<a href="${pageContext.request.contextPath}/" id="logo">E-commerce
 					<em>accessibility</em>
@@ -95,38 +98,45 @@
 					<form:form action="userRegistration" method="post"
 						modelAttribute="personForm">
 						<div id="nameError" class="error">${nameError}</div>
-						<label>First Name:</label>
-						<form:input path="name" placeholder="First Name" required="true"
+						<label for="FirstName">First Name:</label>
+						<form:input path="name" id="FirstName" placeholder="First Name" required="true"
 							value="${person.name}" autofocus="true" />
+							
 						<div id="surnameError" class="error">${surnameError}</div>
-						<label>Surname:</label>
+						<label for="Surname">Surname:</label>
 						<form:input path="surname" placeholder="Surname" required="true"
-							value="${person.surname}" />
+							value="${person.surname}" id="Surname"/>
+							
 						<div id="addressError" class="error">${addressError}</div>
-						<label>Address:</label>
+						<label for="address">Address:</label>
 						<form:input path="address" placeholder="Address" required="true"
-							value="${person.address}" />
+							value="${person.address}" id="address" />
+							
 						<div id="ccnError" class="error">${ccnError}</div>
-						<label>Ccn:</label>
+						<label for="Ccn">Ccn:</label>
 						<form:input path="ccn" placeholder="Ccn" required="true"
-							value="${person.ccn}" />
+							value="${person.ccn}" id="Ccn"/>
+							
 						<div id="ccexpError" class="error">${ccexpError}</div>
-						<label>Cc expiration date:</label>
+						<label for="exp">Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
 							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
 							title="The date should be in the format DD/MM with leading zeros where necessary"
-							required="true" value="${person.ccexp}" />
+							required="true" value="${person.ccexp}" id="exp" />
+							
 						<div id="usernameError" aria-live="polite" class="error">${userNameError}</div>
-						<label>User Name:</label>
-						<form:input id="userName" path="userName" placeholder="User Name"
+						<label for="Username">User Name:</label>
+						<form:input id="UserName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true"
 							value="${person.userName}" />
+							
 						<div id="passwordError" class="error">${passwordError}</div>
-						<label>Password:</label>
+						<label for="password">Password:</label>
 						<form:input id="password" type="password" path="passw"
 							placeholder="Password" required="true" />
+							
 						<div id="passw" aria-live="polite" class="error"></div>
-						<label>Confirm Password:</label>
+						<label for="confirmPassword">Confirm Password:</label>
 						<input id="confirmPassword" type="password"
 							placeholder="Confirm Password" required onblur="checkPassw()" />
 
