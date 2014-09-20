@@ -14,10 +14,12 @@
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
+<noscript>
+	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
+</noscript>
 </head>
-<link href="<c:url value="/css/style.css" />" rel="stylesheet">
-<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
-<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 <body>
 
 	<!-- Header  ho modificato div in header e aggiunto il ruolo-->

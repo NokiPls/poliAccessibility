@@ -36,27 +36,36 @@ public class HomeController {
 	private String type;
 	private Product currentProduct;
 	private Person currentUser;
+	private String css;
+	private String category;
+	private List<String> subcatV = new ArrayList<String>();
+	private List<String> subcatH = new ArrayList<String>();
+	private List<String> types = new ArrayList<String>();
 
 	@Autowired
 	public HomeController(UserManagerInterface um, ProductsFinderInterface pf) {
 		this.um = um;
 		this.pf = pf;
 		this.pf.init();
+		this.css = "stylenn";
 	}
 
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
+		model.addAttribute("css", css);
 		return "home";
 	}
 
 	@RequestMapping(value = "/contactUs", method = RequestMethod.GET)
 	public String contactUs(Model model) {
+		model.addAttribute("css", css);
 		return "contactUs";
 	}
 
 	@RequestMapping(value = "/userRegistration", method = RequestMethod.GET)
 	public String showForm(Model model) {
+		model.addAttribute("css", css);
 		model.addAttribute("personForm", new Person());
 		return "registration";
 	}
@@ -65,7 +74,7 @@ public class HomeController {
 	public String registrationFormEvaluation(
 			@Valid @ModelAttribute Person personForm, BindingResult result,
 			Model model) {
-
+		model.addAttribute("css", css);
 		String userNameError = "Username already taken.";
 		String nameError = "It is mandatory to insert your name.";
 		String surnameError = "It is mandatory to insert your surname.";
@@ -174,7 +183,7 @@ public class HomeController {
 	public @ResponseBody
 	String checkUsarName(@RequestParam(value = "userName") String userName,
 			Model model) {
-
+		model.addAttribute("css", css);
 		String state = "";
 		String error = "Username already taken.";
 		String fine = "Username is now ok.";
@@ -190,6 +199,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
+		model.addAttribute("css", css);
 		model.addAttribute("personForm", new Person());
 		return "login";
 	}
@@ -198,6 +208,7 @@ public class HomeController {
 	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
 
+		model.addAttribute("css", css);
 		String error = "";
 		currentUser = personForm;
 		Person p = um.getUserByUserName(personForm.getUserName());
@@ -226,17 +237,19 @@ public class HomeController {
 
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
 	public String checkLogin(Model model) {
+		model.addAttribute("css", css);
 		return "";
 	}
 
 	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
 	public String allProducts(Model model) {
+		model.addAttribute("css", css);
 		products = new ArrayList<Product>();
 		products = pf.findAllProducts();
-		List<String> types = new ArrayList<String>();
+		types = new ArrayList<String>();
 		types.add("Vision Impaired");
 		types.add("Hearing and Speech");
-		model.addAttribute("product", products);
+		model.addAttribute("products", products);
 		model.addAttribute("types", types);
 		return "allProducts";
 	}
@@ -245,10 +258,11 @@ public class HomeController {
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {
-
+		model.addAttribute("css", css);
 		products = new ArrayList<Product>();
-		List<String> subcatV = new ArrayList<String>();
-		List<String> subcatH = new ArrayList<String>();
+		subcatV = new ArrayList<String>();
+		subcatH = new ArrayList<String>();
+		this.category = category;
 
 		products = pf.findProductsByCategory(category);
 
@@ -278,14 +292,14 @@ public class HomeController {
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(Model model,
 			@RequestParam(value = "type") String type) {
-
+		model.addAttribute("css", css);
 		products = new ArrayList<Product>();
 		products = pf.findProductsByType(type);
 
 		this.type = type;
 
-		List<String> subcatV = new ArrayList<String>();
-		List<String> subcatH = new ArrayList<String>();
+		subcatV = new ArrayList<String>();
+		subcatH = new ArrayList<String>();
 
 		if (type.equals("Vision Impaired")) {
 			subcatV.add("Braille Displays");
@@ -304,12 +318,13 @@ public class HomeController {
 		model.addAttribute("v", "Vision Impaired");
 		model.addAttribute("h", "Hearing and Speech");
 		model.addAttribute("type", type);
-		model.addAttribute("product", products);
+		model.addAttribute("products", products);
 		return "products";
 	}
 
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "i") int i) {
+		model.addAttribute("css", css);
 		currentProduct = products.get(i);
 		model.addAttribute("product", currentProduct);
 		return "product";
@@ -317,7 +332,40 @@ public class HomeController {
 
 	@RequestMapping(value = "/orderSuccess", method = RequestMethod.GET)
 	public String buy(Model model) {
+		model.addAttribute("css", css);
 		return "orderSuccess";
 	}
 
+	@RequestMapping(value = "/switchCss", method = RequestMethod.GET)
+	public String switchCss(Model model,
+			@RequestParam(value = "font") String font,
+			@RequestParam(value = "contrast") String contrast,
+			@RequestParam(value = "page") String page) {
+		if (font.equals("normal")) {
+			if (contrast.equals("normal")) {
+				this.css = "stylenn";
+			} else {
+				this.css = "stylenh";
+			}
+		} else {
+			if (contrast.equals("normal")) {
+				this.css = "stylehn";
+			} else {
+				this.css = "stylehh";
+			}
+		}
+		this.css = "style";
+		model.addAttribute("types", types);
+		model.addAttribute("categ", category);
+		model.addAttribute("css", css);
+		model.addAttribute("product", currentProduct);
+		model.addAttribute("subcategoriesV", subcatV);
+		model.addAttribute("subcategoriesH", subcatH);
+		model.addAttribute("v", "Vision Impaired");
+		model.addAttribute("h", "Hearing and Speech");
+		model.addAttribute("type", type);
+		model.addAttribute("products", products);
+		model.addAttribute("personForm", new Person());
+		return page;
+	}
 }
