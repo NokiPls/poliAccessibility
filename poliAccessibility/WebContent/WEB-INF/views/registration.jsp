@@ -64,14 +64,6 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
 				<li><a href="${pageContext.request.contextPath}/allProducts">Products</a>
-					<ul>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Vision%20Impaired">Vision
-								Impaired</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/products?type=Hearing%20and%20Speech">Hearing
-								and Speech</a></li>
-					</ul>
 				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
 						Us</a></li>
 				<li class="current"><a
