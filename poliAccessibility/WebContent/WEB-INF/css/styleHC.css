@@ -797,7 +797,8 @@
 			vertical-align: middle;
 			margin-left: 1em;
 		}
-div#hidden{display: none;}
+.hidden{  position:absolute;
+  left:-9999px;}
 
 /* Footer */
 
