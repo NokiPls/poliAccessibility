@@ -98,7 +98,7 @@
 	<div id="footer">
 		<footer class="copyright" role="contentinfo">
 
-			<p>Accessibility project 2013/14</p>
+			<h3>Accessibility project 2013/14</h3>
 
 		</footer>
 	</div>

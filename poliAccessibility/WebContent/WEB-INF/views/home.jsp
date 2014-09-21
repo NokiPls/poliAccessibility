@@ -33,7 +33,7 @@
 				</a>
 			</h1>
 		</header>
-		<a class="hidden" href="#content">Skip to main content</a>
+		<div class="hidden"><a href="#content">Skip to main content</a></div>
 		
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
