@@ -37,6 +37,7 @@ public class HomeController {
 	private Product currentProduct;
 	private Person currentUser;
 	private String css;
+	private String js;
 	private String category;
 	private List<String> subcatV = new ArrayList<String>();
 	private List<String> subcatH = new ArrayList<String>();
@@ -48,24 +49,28 @@ public class HomeController {
 		this.pf = pf;
 		this.pf.init();
 		this.css = "stylenn";
+		this.js = "initnn";
 	}
 
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		return "home";
 	}
 
 	@RequestMapping(value = "/contactUs", method = RequestMethod.GET)
 	public String contactUs(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		return "contactUs";
 	}
 
 	@RequestMapping(value = "/userRegistration", method = RequestMethod.GET)
 	public String showForm(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("personForm", new Person());
 		return "registration";
 	}
@@ -74,6 +79,7 @@ public class HomeController {
 	public String registrationFormEvaluation(
 			@Valid @ModelAttribute Person personForm, BindingResult result,
 			Model model) {
+		model.addAttribute("js", js);
 		model.addAttribute("css", css);
 		String userNameError = "Username already taken.";
 		String nameError = "It is mandatory to insert your name.";
@@ -183,7 +189,6 @@ public class HomeController {
 	public @ResponseBody
 	String checkUsarName(@RequestParam(value = "userName") String userName,
 			Model model) {
-		model.addAttribute("css", css);
 		String state = "";
 		String error = "Username already taken.";
 		String fine = "Username is now ok.";
@@ -193,6 +198,9 @@ public class HomeController {
 		if (um.getUserByUserName(userName) != null) {
 			state = error;
 		}
+
+		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("userName", state);
 		return state;
 	}
@@ -200,6 +208,7 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("personForm", new Person());
 		return "login";
 	}
@@ -230,6 +239,9 @@ public class HomeController {
 				return "login";
 			}
 		}
+
+		model.addAttribute("js", js);
+		model.addAttribute("css", css);
 		model.addAttribute("person", currentUser);
 		model.addAttribute("product", currentProduct);
 		return "purchaseConfirm";
@@ -238,17 +250,20 @@ public class HomeController {
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
 	public String checkLogin(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		return "";
 	}
 
 	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
 	public String allProducts(Model model) {
-		model.addAttribute("css", css);
 		products = new ArrayList<Product>();
 		products = pf.findAllProducts();
 		types = new ArrayList<String>();
 		types.add("Vision Impaired");
 		types.add("Hearing and Speech");
+
+		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("products", products);
 		model.addAttribute("types", types);
 		return "allProducts";
@@ -258,7 +273,6 @@ public class HomeController {
 	@RequestMapping(value = "/category", method = RequestMethod.GET)
 	public String categ(Model model,
 			@RequestParam(value = "category") String category) {
-		model.addAttribute("css", css);
 		products = new ArrayList<Product>();
 		subcatV = new ArrayList<String>();
 		subcatH = new ArrayList<String>();
@@ -278,6 +292,8 @@ public class HomeController {
 			subcatH.add("Voice Amplifiers");
 		}
 
+		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("subcategoriesV", subcatV);
 		model.addAttribute("subcategoriesH", subcatH);
 		model.addAttribute("v", "Vision Impaired");
@@ -292,7 +308,7 @@ public class HomeController {
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(Model model,
 			@RequestParam(value = "type") String type) {
-		model.addAttribute("css", css);
+
 		products = new ArrayList<Product>();
 		products = pf.findProductsByType(type);
 
@@ -313,6 +329,8 @@ public class HomeController {
 			subcatH.add("Voice Amplifiers");
 		}
 
+		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("subcategoriesV", subcatV);
 		model.addAttribute("subcategoriesH", subcatH);
 		model.addAttribute("v", "Vision Impaired");
@@ -325,6 +343,7 @@ public class HomeController {
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "i") int i) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		currentProduct = products.get(i);
 		model.addAttribute("product", currentProduct);
 		return "product";
@@ -333,6 +352,7 @@ public class HomeController {
 	@RequestMapping(value = "/orderSuccess", method = RequestMethod.GET)
 	public String buy(Model model) {
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		return "orderSuccess";
 	}
 
@@ -344,20 +364,24 @@ public class HomeController {
 		if (font.equals("normal")) {
 			if (contrast.equals("normal")) {
 				this.css = "stylenn";
+				this.js = "initnn";
 			} else {
 				this.css = "stylenh";
+				this.js = "initnh";
 			}
 		} else {
 			if (contrast.equals("normal")) {
 				this.css = "stylehn";
+				this.js = "inithn";
 			} else {
 				this.css = "stylehh";
+				this.js = "inithh";
 			}
 		}
-		this.css = "style";
 		model.addAttribute("types", types);
 		model.addAttribute("categ", category);
 		model.addAttribute("css", css);
+		model.addAttribute("js", js);
 		model.addAttribute("product", currentProduct);
 		model.addAttribute("subcategoriesV", subcatV);
 		model.addAttribute("subcategoriesH", subcatH);
