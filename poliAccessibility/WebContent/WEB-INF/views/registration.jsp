@@ -86,7 +86,7 @@
 					<header>
 						<h2>Accessible E-commerce</h2>
 						<br>
-						<p>Accessibility Project</p>
+						<h3>Accessibility Project</h3>
 					</header>
 					<c:url var="url" value="/person" />
 					<form:form action="userRegistration" method="post"

@@ -66,7 +66,7 @@
 
 					<span class="image featured"><img
 						src="<c:url value="/img/${product.imageURL}"/>"
-						alt="Image of the product" /></span>
+						alt="Image of the product ${product.prodName} " /></span>
 					<embed width="420" height="315" src="${product.linkVideo}">
 					<table>
 						<caption>Specs Table</caption>

@@ -101,7 +101,7 @@
 											<div class="box post">
 												<a class="image left"
 													href="${pageContext.request.contextPath}/product?i=${status.index}"><img
-													src="<c:url value="/img/${i.imageURL}"/>" alt="Image of the product" /></a>
+													src="<c:url value="/img/${i.imageURL}"/>" alt="Image of the product <c:out value="${i.prodName}"></c:out>" /></a>
 												<div class="inner">
 													<h3>
 														<c:out value="${i.prodName}"></c:out>
@@ -112,7 +112,7 @@
 													</p>
 													<a
 														href="${pageContext.request.contextPath}/product?i=${status.index}">See
-														more details</a>
+														more details about <c:out value="${i.prodName}"></c:out></a>
 												</div>
 
 											</div>
