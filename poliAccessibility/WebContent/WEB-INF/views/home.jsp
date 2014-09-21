@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
@@ -85,6 +86,12 @@
 								<h2>Accessible E-commerce</h2>
 								<h3>accessibility project</h3>
 							</header>
+							<form:form action="switchCss" method="get">
+								<input type="checkbox" name="font" value="Switch to ${fontType}" />
+								<input type="checkbox" name="contrast"
+									value="Switch to ${contrastType}" />
+								<input type="submit" value="Confirm." />
+							</form:form>
 							<span class="image featured"><img
 								src="<c:url value="/img/download.jpg" />"
 								alt="Always provide alt text for accessibility ;-)" /></span>
