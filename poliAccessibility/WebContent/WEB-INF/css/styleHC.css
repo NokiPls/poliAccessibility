@@ -33,7 +33,7 @@
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.65em;
-		
+		background:black;
 	}
 
 	a {
@@ -42,13 +42,13 @@
 		-o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		color: #37c0fb;
+		color: white;
 		text-decoration: none;
 		border-bottom: dotted 1px;
 	}
 
 		a:hover {
-			color: white;
+			color: yellow;
 			border-bottom-color: transparent;
 		}
 
@@ -174,7 +174,7 @@
 		-o-transition: border-color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out;
-		background: #fff;
+		background: rgb(32, 32, 32);
 		border: solid 1px #e0e0e0;
 		border-radius: 5px;
 		color: inherit;
@@ -189,7 +189,7 @@
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		textarea:focus {
-			border-color: #37c0fb;
+			border-color: yellow;
 		}
 
 	input[type="text"],
@@ -450,7 +450,7 @@
 		-o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		background-color: #37c0fb;
+		background-color: #FFB800;;
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
 		background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
@@ -458,7 +458,7 @@
 		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
 		border-radius: 5px;
 		border: 0;
-		color: white;
+		color: black;
 		cursor: pointer;
 		display: inline-block;
 		padding: 0 1.5em;
@@ -474,8 +474,8 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: #50c8fb;
-			color: white !important;
+			background-color: yellow;
+			color: black !important;
 		}
 
 		input[type="submit"]:active,
@@ -797,10 +797,12 @@
 			vertical-align: middle;
 			margin-left: 1em;
 		}
+div#hidden{display: none;}
 
 /* Footer */
 
 	#footer {
+		background: rgb(22, 22, 22);
 		padding: 4em 0 8em 0;
 	}
 
