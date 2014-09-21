@@ -13,9 +13,9 @@
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
-<script src="js/init.js"></script>
+<script src="js/${js}.js"></script>
 <noscript>
-	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/${css}.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 </noscript>
@@ -53,7 +53,7 @@
 		<div class="container">
 			<div class="row double">
 				<div class="4u">
-					<div id="sidebar"  role="complementary">
+					<div id="sidebar" role="complementary">
 						<section>
 							<h3>
 								<a href="${pageContext.request.contextPath}/products?type=${v}">${v}</a>
@@ -101,7 +101,8 @@
 											<div class="box post">
 												<a class="image left"
 													href="${pageContext.request.contextPath}/product?i=${status.index}"><img
-													src="<c:url value="/img/${i.imageURL}"/>" alt="Image of the product <c:out value="${i.prodName}"></c:out>" /></a>
+													src="<c:url value="/img/${i.imageURL}"/>"
+													alt="Image of the product <c:out value="${i.prodName}"></c:out>" /></a>
 												<div class="inner">
 													<h3>
 														<c:out value="${i.prodName}"></c:out>
@@ -112,7 +113,8 @@
 													</p>
 													<a
 														href="${pageContext.request.contextPath}/product?i=${status.index}">See
-														more details about <c:out value="${i.prodName}"></c:out></a>
+														more details about <c:out value="${i.prodName}"></c:out>
+													</a>
 												</div>
 
 											</div>

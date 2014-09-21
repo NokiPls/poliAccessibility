@@ -14,7 +14,7 @@
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
-<script src="js/init.js"></script>
+<script src="js/${js}.js"></script>
 <noscript>
 	<link href="<c:url value="/css/${css}.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">

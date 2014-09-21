@@ -13,9 +13,9 @@
 <script src="js/jquery.dropotron.min.js"></script>
 <script src="js/skel.min.js"></script>
 <script src="js/skel-layers.min.js"></script>
-<script src="js/init.js"></script>
+<script src="js/${js}.js"></script>
 <noscript>
-	<link href="<c:url value="/css/style.css" />" rel="stylesheet">
+	<link href="<c:url value="/css/${css}.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/skel.css" />" rel="stylesheet">
 	<link href="<c:url value="/css/style-wide.css" />" rel="stylesheet">
 </noscript>
@@ -67,7 +67,8 @@
 					<span class="image featured"><img
 						src="<c:url value="/img/${product.imageURL}"/>"
 						alt="Image of the product ${product.prodName} " /></span>
-					<embed width="420" height="315" src="${product.linkVideo}">
+					<embed width="420" height="315" src="${product.linkVideo}"
+						alt="Video of the product">
 					<table>
 						<caption>Specs Table</caption>
 						<tr>
