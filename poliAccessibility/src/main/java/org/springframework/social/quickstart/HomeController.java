@@ -68,6 +68,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/contactUs", method = RequestMethod.GET)
 	public String contactUs(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		return "contactUs";
@@ -75,6 +77,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/userRegistration", method = RequestMethod.GET)
 	public String showForm(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("personForm", new Person());
@@ -85,6 +89,8 @@ public class HomeController {
 	public String registrationFormEvaluation(
 			@Valid @ModelAttribute Person personForm, BindingResult result,
 			Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("js", js);
 		model.addAttribute("css", css);
 		String userNameError = "Username already taken.";
@@ -204,7 +210,8 @@ public class HomeController {
 		if (um.getUserByUserName(userName) != null) {
 			state = error;
 		}
-
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("userName", state);
@@ -213,6 +220,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("personForm", new Person());
@@ -222,6 +231,8 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("js", js);
 		model.addAttribute("css", css);
 		String error = "";
@@ -245,14 +256,16 @@ public class HomeController {
 				return "login";
 			}
 		}
-
-		model.addAttribute("person", currentUser);
+		currentUser = p;
+		model.addAttribute("person", p);
 		model.addAttribute("product", currentProduct);
 		return "purchaseConfirm";
 	}
 
 	@RequestMapping(value = "/checkLogin", method = RequestMethod.GET)
 	public String checkLogin(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		return "";
@@ -265,7 +278,8 @@ public class HomeController {
 		types = new ArrayList<String>();
 		types.add("Vision Impaired");
 		types.add("Hearing and Speech");
-
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("products", products);
@@ -295,14 +309,15 @@ public class HomeController {
 			subcatH.add("Amplifications Systems");
 			subcatH.add("Voice Amplifiers");
 		}
-
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("subcategoriesV", subcatV);
 		model.addAttribute("subcategoriesH", subcatH);
 		model.addAttribute("v", "Vision Impaired");
 		model.addAttribute("h", "Hearing and Speech");
-		model.addAttribute("product", products);
+		model.addAttribute("products", products);
 		model.addAttribute("categ", category);
 		model.addAttribute("type", this.type);
 		return "category";
@@ -332,7 +347,8 @@ public class HomeController {
 			subcatH.add("Amplifications Systems");
 			subcatH.add("Voice Amplifiers");
 		}
-
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		model.addAttribute("subcategoriesV", subcatV);
@@ -346,6 +362,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/product", method = RequestMethod.GET)
 	public String product(Model model, @RequestParam(value = "i") int i) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		currentProduct = products.get(i);
@@ -355,6 +373,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/orderSuccess", method = RequestMethod.GET)
 	public String buy(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		return "orderSuccess";
@@ -397,6 +417,7 @@ public class HomeController {
 		model.addAttribute("h", "Hearing and Speech");
 		model.addAttribute("type", type);
 		model.addAttribute("products", products);
+		model.addAttribute("currentAddress", currentUser.getAddress());
 		model.addAttribute("personForm", new Person());
 		return page;
 	}

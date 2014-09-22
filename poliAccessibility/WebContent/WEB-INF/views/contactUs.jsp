@@ -34,15 +34,27 @@
 				</a>
 			</h1>
 		</header>
-		<!-- Nav -->
+		<!-- Navigation -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
-				<li><a href="${pageContext.request.contextPath}/allProducts">Products</a>
+				<li><a href="${pageContext.request.contextPath}/" title="Home">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/allProducts"
+					title="All products">Products</a>
 				<li class="current"><a
-					href="${pageContext.request.contextPath}/contactUs">Contact Us</a></li>
+					href="${pageContext.request.contextPath}/contactUs"
+					title="Contact us">Contact Us</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+					href="${pageContext.request.contextPath}/userRegistration"
+					title="Registration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=contactUs"
+					title="Switch
+						to ${font} font">Switch to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=contactUs"
+					title="Switch
+						to ${contrast} contrast">Switch to
+						${contrast} contrast</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -60,33 +72,18 @@
 						<br>
 						<h3>accessibility project</h3>
 					</header>
-					<span class="image featured"><img
-						src="<c:url value="/img/download.jpg" />"
-						alt="Always provide alt text for accessibility ;-)" /></span>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Maecenas ac quam risus, at tempus justo. Sed dictum rutrum massa
-						eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem
-						felis, ultricies a bibendum id, bibendum sit amet nisl. Mauris et
-						lorem quam. Maecenas rutrum imperdiet vulputate. Nulla quis nibh
-						ipsum, sed egestas justo. Morbi ut ante mattis orci convallis
-						tempor. Etiam a lacus a lacus pharetra porttitor quis accumsan
-						odio. Sed vel euismod nisi. Etiam convallis rhoncus dui quis
-						euismod. Maecenas lorem tellus, congue et condimentum ac,
-						ullamcorper non sapien. Donec sagittis massa et leo semper a
-						scelerisque metus faucibus. Morbi congue mattis mi. Phasellus sed
-						nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
-					<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac
-						purus. Praesent mattis, enim quis hendrerit porttitor, sapien
-						tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-						Suspendisse laoreet metus ut metus imperdiet interdum aliquam
-						justo tincidunt. Mauris dolor urna, fringilla vel malesuada ac,
-						dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-						Maecenas tortor mauris, consectetur pellentesque dapibus eget,
-						tincidunt vitae arcu. Vestibulum purus augue, tincidunt sit amet
-						iaculis id, porta eu purus.</p>
-
-
+					<p>Our Online Store is a convenient place to purchase our
+						products and accessories. You can buy online or by calling
+						800-692-7753. You can get information about an order you placed on
+						the Online Store through the Order Status page. If you prefer, you
+						can also get order status or make changes by phone at
+						1-800-692-7753. Our Retail Stores Experience the digital lifestyle
+						at any of Our Retail Stores around the country. Find store hours
+						and contact information for all locations. Find Our Authorized
+						Resellers Use our Reseller Locator to find Our Authorized Reseller
+						in the U.S. Our Authorized Resellers offer industry expertise,
+						multi-platform services, and accessibility-based solutions for a
+						wide variety of disabilities.</p>
 				</article>
 			</section>
 		</div>

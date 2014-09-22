@@ -37,15 +37,25 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/" title="Home">Homepage</a></li>
 				<li class="current"><a
-					href="${pageContext.request.contextPath}/allProducts">Products</a>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-						Us</a></li>
+					href="${pageContext.request.contextPath}/allProducts"
+					title="All products">Products</a>
+				<li><a href="${pageContext.request.contextPath}/contactUs"
+					title="Contact us">Contact Us</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+					href="${pageContext.request.contextPath}/userRegistration"
+					title="Registration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=category"
+					title="Switch
+						to ${font} font">Switch to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=category"
+					title="Switch
+						to ${contrast} contrast">Switch to
+						${contrast} contrast</a></li>
 			</ul>
-
 		</nav>
 	</div>
 
@@ -54,7 +64,7 @@
 		<div class="container">
 			<div class="row double">
 				<div class="4u">
-					<div id="sidebar"  role="complementary">
+					<div id="sidebar" role="complementary">
 						<section>
 							<h3>
 								<a href="${pageContext.request.contextPath}/products?type=${v}">${v}</a>
@@ -95,7 +105,7 @@
 						<article role=article>
 							<header> </header>
 							<section id="content" role="main">
-								<c:forEach var="i" items="${product}" varStatus="status">
+								<c:forEach var="i" items="${products}" varStatus="status">
 									<article role=article>
 										<section class="6u">
 											<div class="box post">

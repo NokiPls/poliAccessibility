@@ -36,15 +36,25 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/" title="Home">Homepage</a></li>
 				<li class="current"><a
-					href="${pageContext.request.contextPath}/allProducts">Products</a>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-						Us</a></li>
+					href="${pageContext.request.contextPath}/allProducts"
+					title="All products">Products</a>
+				<li><a href="${pageContext.request.contextPath}/contactUs"
+					title="Contact us">Contact Us</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+					href="${pageContext.request.contextPath}/userRegistration"
+					title="Registration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=product"
+					title="Switch
+						to ${font} font">Switch to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=product"
+					title="Switch
+						to ${contrast} contrast">Switch to
+						${contrast} contrast</a></li>
 			</ul>
-
 		</nav>
 	</div>
 
@@ -65,7 +75,7 @@
 							</div>
 							<h2>${product.price}</h2>
 							<form action="login" method="get">
-								<input type="submit" value="Login to buy." />
+								<input type="submit" value="Login to buy" />
 							</form>
 						</div>
 					</section>
