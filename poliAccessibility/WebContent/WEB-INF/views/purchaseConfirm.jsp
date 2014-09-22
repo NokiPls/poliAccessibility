@@ -82,7 +82,7 @@
 							<h3>Do you want the product delivered at a different
 								address?</h3>
 							<label for="newAddress">Different Address for delivery:</label> <input
-								placeholder="New Address" id="newAddress" />
+								placeholder="New Address" size="60" id="newAddress" />
 							<form action="${pageContext.request.contextPath}/orderSuccess">
 								<input type="submit" value="Confirm and Buy">
 							</form>

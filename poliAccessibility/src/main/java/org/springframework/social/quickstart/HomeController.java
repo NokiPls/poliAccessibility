@@ -210,10 +210,6 @@ public class HomeController {
 		if (um.getUserByUserName(userName) != null) {
 			state = error;
 		}
-		model.addAttribute("font", this.font);
-		model.addAttribute("contrast", this.contrast);
-		model.addAttribute("css", css);
-		model.addAttribute("js", js);
 		model.addAttribute("userName", state);
 		return state;
 	}

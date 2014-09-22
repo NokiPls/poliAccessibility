@@ -91,9 +91,8 @@
 
 				<article role=article>
 					<header>
-						<h2>Accessible E-commerce</h2>
-						<br>
-						<h3>Accessibility Project</h3>
+						<h2>Account registration</h2>
+						<h3>Register an account in order to buy a product.</h3>
 					</header>
 					<c:url var="url" value="/person" />
 					<form:form action="userRegistration" method="post"
@@ -120,9 +119,9 @@
 
 						<div id="ccexpError" class="error">${ccexpError}</div>
 						<label for="exp">Cc expiration date:</label>
-						<form:input path="ccexp" placeholder="DD/MM Cc expiration date"
-							pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])"
-							title="The date should be in the format DD/MM with leading zeros where necessary"
+						<form:input path="ccexp" placeholder="MM/YY Cc expiration date"
+							pattern="(0[1-9]|1[0-2])\/([1-9][1-9])"
+							title="The date should be in the format MM/YY with leading zeros where necessary"
 							required="true" value="${person.ccexp}" id="exp" />
 
 						<div id="usernameError" aria-live="polite" class="error">${userNameError}</div>
