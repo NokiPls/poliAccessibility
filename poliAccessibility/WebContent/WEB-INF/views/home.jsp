@@ -86,11 +86,14 @@
 								<h2>Accessible E-commerce</h2>
 								<h3>Accessibility Project</h3>
 							</header>
-							<form:form action="switchCss" method="get">
-								<input name="font" value="Switch to ${fontType}" />
-								<input name="contrast" value="Switch to ${contrastType}" />
-								<input name="page">
-								<input type="submit" value="Confirm." />
+							<form:form action="switchFont" method="get">
+								<input name="page" value="home">
+								<input type="submit" name="font" value="Switch to ${font} font." />
+							</form:form>
+							<form:form action="switchContrast" method="get">
+								<input name="page" value="home">
+								<input type="submit" name="contrast"
+									value="Switch to ${contrast} contrast." />
 							</form:form>
 							<span class="image featured"><img
 								src="<c:url value="/img/accessibility.jpg" />"

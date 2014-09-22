@@ -38,6 +38,8 @@ public class HomeController {
 	private Person currentUser;
 	private String css;
 	private String js;
+	private String contrast;
+	private String font;
 	private String category;
 	private List<String> subcatV = new ArrayList<String>();
 	private List<String> subcatH = new ArrayList<String>();
@@ -50,11 +52,15 @@ public class HomeController {
 		this.pf.init();
 		this.css = "stylenn";
 		this.js = "initnn";
+		this.contrast = "high";
+		this.font = "high";
 	}
 
 	// Home
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
 	public String home(Model model) {
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("css", css);
 		model.addAttribute("js", js);
 		return "home";
@@ -354,28 +360,73 @@ public class HomeController {
 		return "orderSuccess";
 	}
 
-	@RequestMapping(value = "/switchCss", method = RequestMethod.GET)
-	public String switchCss(Model model,
+	@RequestMapping(value = "/switchFont", method = RequestMethod.GET)
+	public String switchFont(Model model,
 			@RequestParam(value = "font") String font,
-			@RequestParam(value = "contrast") String contrast,
 			@RequestParam(value = "page") String page) {
-		if (font.equals("normal")) {
+		if (font.equals("Switch to normal font.")) {
+			this.font = "high";
 			if (contrast.equals("normal")) {
-				this.css = "stylenn";
-				this.js = "initnn";
-			} else {
 				this.css = "stylenh";
 				this.js = "initnh";
+			} else {
+				this.css = "stylenn";
+				this.js = "initnn";
 			}
 		} else {
+			this.font = "normal";
 			if (contrast.equals("normal")) {
+				this.css = "stylehh";
+				this.js = "inithh";
+			} else {
+				this.css = "stylehn";
+				this.js = "inithn";
+			}
+
+		}
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
+		model.addAttribute("types", types);
+		model.addAttribute("categ", category);
+		model.addAttribute("css", css);
+		model.addAttribute("js", js);
+		model.addAttribute("product", currentProduct);
+		model.addAttribute("subcategoriesV", subcatV);
+		model.addAttribute("subcategoriesH", subcatH);
+		model.addAttribute("v", "Vision Impaired");
+		model.addAttribute("h", "Hearing and Speech");
+		model.addAttribute("type", type);
+		model.addAttribute("products", products);
+		model.addAttribute("personForm", new Person());
+		return page;
+	}
+
+	@RequestMapping(value = "/switchContrast", method = RequestMethod.GET)
+	public String switchContrast(Model model,
+			@RequestParam(value = "contrast") String contrast,
+			@RequestParam(value = "page") String page) {
+		if (contrast.equals("Switch to normal contrast.")) {
+			this.contrast = "high";
+			if (font.equals("normal")) {
 				this.css = "stylehn";
 				this.js = "inithn";
 			} else {
+				this.css = "stylenn";
+				this.js = "initnn";
+			}
+		} else {
+			this.contrast = "normal";
+			if (font.equals("normal")) {
 				this.css = "stylehh";
 				this.js = "inithh";
+			} else {
+				this.css = "stylenh";
+				this.js = "initnh";
+
 			}
 		}
+		model.addAttribute("font", this.font);
+		model.addAttribute("contrast", this.contrast);
 		model.addAttribute("types", types);
 		model.addAttribute("categ", category);
 		model.addAttribute("css", css);
