@@ -87,11 +87,11 @@
 								<h3>Accessibility Project</h3>
 							</header>
 							<form:form action="switchFont" method="get">
-								<input name="page" value="home">
+								<input class="hidden" name="page" value="home">
 								<input type="submit" name="font" value="Switch to ${font} font." />
 							</form:form>
 							<form:form action="switchContrast" method="get">
-								<input name="page" value="home">
+								<input  class="hidden" name="page" value="home">
 								<input type="submit" name="contrast"
 									value="Switch to ${contrast} contrast." />
 							</form:form>
