@@ -216,7 +216,7 @@ public class HomeController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute Person personForm,
 			BindingResult result, Model model) {
-
+		model.addAttribute("js", js);
 		model.addAttribute("css", css);
 		String error = "";
 		currentUser = personForm;
@@ -240,8 +240,6 @@ public class HomeController {
 			}
 		}
 
-		model.addAttribute("js", js);
-		model.addAttribute("css", css);
 		model.addAttribute("person", currentUser);
 		model.addAttribute("product", currentProduct);
 		return "purchaseConfirm";

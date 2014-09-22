@@ -87,9 +87,9 @@
 								<h3>accessibility project</h3>
 							</header>
 							<form:form action="switchCss" method="get">
-								<input type="checkbox" name="font" value="Switch to ${fontType}" />
-								<input type="checkbox" name="contrast"
-									value="Switch to ${contrastType}" />
+								<input name="font" value="Switch to ${fontType}" />
+								<input name="contrast" value="Switch to ${contrastType}" />
+								<input name="page">
 								<input type="submit" value="Confirm." />
 							</form:form>
 							<span class="image featured"><img
