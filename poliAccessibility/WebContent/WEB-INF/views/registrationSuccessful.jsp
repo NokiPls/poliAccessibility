@@ -55,11 +55,6 @@
 				<!-- Content -->
 
 				<article role=article>
-					<header>
-						<h2>Accessible E-commerce</h2>
-						<br>
-						<p>Accessibility Project</p>
-					</header>
 					<p>Congratulations, ${surname} ${name}, your registration has
 						been successful.</p>
 					<br> <a href="${pageContext.request.contextPath}/">Proceed
