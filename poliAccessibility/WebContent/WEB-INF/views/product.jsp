@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-<title>${product.prodName}</title>
+<title>Product ${product.prodName}</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
