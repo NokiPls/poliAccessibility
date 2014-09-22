@@ -69,7 +69,6 @@
 						<!-- Content -->
 
 						<article role=article>
-							<header> </header>
 							<section id="content">
 								<c:forEach var="i" items="${products}" varStatus="status">
 									<article role=article>

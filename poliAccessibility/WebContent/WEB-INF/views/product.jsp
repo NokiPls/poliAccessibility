@@ -54,19 +54,22 @@
 			<section id="content" role="main">
 				<!-- Content -->
 				<article role=article>
-					<header>
-						<h1>${product.prodName}</h1>
-						<br>
-						<p>${product.briefDescription}${product.longDescription}</p>
-						<br>
-						<h2>${product.price}</h2>
-						<br> <a href="${pageContext.request.contextPath}/login">Login
-							to Buy</a>
-					</header>
+					<section class="6u">
+						<div class="box post">
+							<span class="image left"><img
+								src="<c:url value="/img/${product.imageURL}"/>"
+								alt="Image of the product ${product.prodName} " /></span>
+							<div class="inner">
+								<h1>${product.prodName}</h1>
+								<p>${product.briefDescription}${product.longDescription}</p>
+							</div>
+							<h2>${product.price}</h2>
+							<form action="login" method="get">
+								<input type="submit" value="Login to buy." />
+							</form>
+						</div>
+					</section>
 
-					<span class="image featured"><img
-						src="<c:url value="/img/${product.imageURL}"/>"
-						alt="Image of the product ${product.prodName} " /></span>
 					<embed width="420" height="315" src="${product.linkVideo}"
 						alt="Video of the product">
 					<table>

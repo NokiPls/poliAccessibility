@@ -53,28 +53,29 @@
 		<div class="container">
 			<section id="content" role="main">
 				<!-- Content -->
-				<article role=article>
-					<header>
-						<h2>${product.prodName}</h2>
-						<br>
-					</header>
 
-					<p>${product.briefDescription}</p>
-					<br> <span class="image featured"><img
-						src="<c:url value="/img/${product.imageURL}"/>"
-						alt="Image of the product." /></span><br>
-					<h2>${product.price}</h2>
-					<br>
-					<h3>Your currently set address:</h3>
-					<br>
-					<p>${person.address}</p>
-					<br>
-					<h3>Do you want the product delivered at a different address?</h3>
-					<br> <label for="newAddress">Different Address for
-						delivery:</label> <input placeholder="New Address" id="newAddress" />
-					<form action="${pageContext.request.contextPath}/orderSuccess">
-						<input type="submit" value="Confirm and Buy">
-					</form>
+				<article role=article>
+					<section class="6u">
+						<div class="box post">
+							<span class="image left"><img
+								src="<c:url value="/img/${product.imageURL}"/>"
+								alt="Image of the product." /></span>
+							<div class="inner">
+								<h2>${product.prodName}</h2>
+								<p>${product.briefDescription}</p>
+							</div>
+							<h2>${product.price}</h2>
+							<h3>Your currently set address:</h3>
+							<p>${person.address}</p>
+							<h3>Do you want the product delivered at a different
+								address?</h3>
+							<label for="newAddress">Different Address for delivery:</label> <input
+								placeholder="New Address" id="newAddress" />
+							<form action="${pageContext.request.contextPath}/orderSuccess">
+								<input type="submit" value="Confirm and Buy">
+							</form>
+						</div>
+					</section>
 				</article>
 			</section>
 		</div>

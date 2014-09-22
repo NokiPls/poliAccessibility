@@ -55,14 +55,9 @@
 			<section id="content" role="main">
 
 				<!-- Content -->
-
 				<article role=article>
 					<header>
-						<h2>Accessible E-commerce</h2>
-						<br>
-						<p>accessibility project</p>
-						<br>
-						<p>Confirm your identity to proceed with the order.</p>
+						<h1>Confirm your identity to proceed with the order.</h1>
 					</header>
 
 					<c:url var="url" value="/person" />
@@ -74,12 +69,11 @@
 						<label for="passw">Password:</label>
 						<form:input type="password" placeholder="Password" path="passw"
 							required="true" id="passw" />
-						<input type="submit" />
+						<input type="submit" value="Login" />
 					</form:form>
 
 					<h3>Not registered yet?</h3>
-					<br> <a
-						href="${pageContext.request.contextPath}/userRegistration">Register
+					<a href="${pageContext.request.contextPath}/userRegistration">Register
 						an account.</a>
 
 				</article>
