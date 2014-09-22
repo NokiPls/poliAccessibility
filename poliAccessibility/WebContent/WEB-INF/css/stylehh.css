@@ -12,7 +12,7 @@
 	body,
 	#skel-layers-wrapper {
 		background:black;
-	}
+	} 
 
 	body.is-loading * {
 		-moz-transition: none !important;
