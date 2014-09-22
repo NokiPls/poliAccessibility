@@ -70,8 +70,8 @@
 					<p>${person.address}</p>
 					<br>
 					<h3>Do you want the product delivered at a different address?</h3>
-					<br> <label>Different Address for delivery:</label> <input
-						placeholder="New Address" />
+					<br> <label for="newAddress">Different Address for
+						delivery:</label> <input placeholder="New Address" id="newAddress" />
 					<form action="${pageContext.request.contextPath}/orderSuccess">
 						<input type="submit" value="Confirm and Buy">
 					</form>
