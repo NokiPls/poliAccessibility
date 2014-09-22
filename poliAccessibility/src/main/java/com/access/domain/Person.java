@@ -11,34 +11,32 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Person implements Serializable{
-	
+public class Person implements Serializable {
+
 	private static final long serialVersionUID = -9015553498567114557L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long oid;
 	@NotNull
-	@Size(min=2)
 	private String name;
 	@NotNull
-	@Size(min=2)
 	private String surname;
 	private String address;
 	private int ccn;
 	private String ccexp;
-	@Column(unique=true)
+	@Column(unique = true)
 	private String userName;
 	private String passw;
 
-
 	public Person() {
 	}
-	
-	public Person(String name, String surname, String address, int ccn, String ccexp, String passw) {
+
+	public Person(String name, String surname, String address, int ccn,
+			String ccexp, String passw) {
 		this.name = name;
 		this.surname = surname;
-		this.address = address;
+		this.setAddress(address);
 		this.ccn = ccn;
 		this.ccexp = ccexp;
 		this.passw = passw;
@@ -60,14 +58,6 @@ public class Person implements Serializable{
 		this.surname = surname;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public int getCcn() {
 		return ccn;
 	}
@@ -84,7 +74,6 @@ public class Person implements Serializable{
 		this.ccexp = ccexp;
 	}
 
-
 	public String getUserName() {
 		return userName;
 	}
@@ -92,11 +81,21 @@ public class Person implements Serializable{
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public String getPassw() {
 		return passw;
 	}
+
 	public void setPassw(String passw) {
 		this.passw = passw;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 }

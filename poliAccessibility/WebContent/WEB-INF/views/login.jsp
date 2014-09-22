@@ -34,18 +34,28 @@
 				</a>
 			</h1>
 		</header>
-		<!-- Nav -->
+		<!-- Navigation -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/" title="Home">Homepage</a></li>
 				<li class="current"><a
-					href="${pageContext.request.contextPath}/allProducts">Products</a>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-						Us</a></li>
+					href="${pageContext.request.contextPath}/allProducts"
+					title="All products">Products</a>
+				<li><a href="${pageContext.request.contextPath}/contactUs"
+					title="Contact us">Contact Us</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+					href="${pageContext.request.contextPath}/userRegistration"
+					title="Registration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=login"
+					title="Switch
+						to ${font} font">Switch to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=login"
+					title="Switch
+						to ${contrast} contrast">Switch to
+						${contrast} contrast</a></li>
 			</ul>
-
 		</nav>
 	</div>
 

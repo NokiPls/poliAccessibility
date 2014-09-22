@@ -37,13 +37,24 @@
 		<!-- Nav -->
 		<nav id="nav" role="navigation">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Homepage</a></li>
+				<li><a href="${pageContext.request.contextPath}/" title="Home">Homepage</a></li>
 				<li class="current"><a
-					href="${pageContext.request.contextPath}/allProducts">Products</a>
-				<li><a href="${pageContext.request.contextPath}/contactUs">Contact
-						Us</a></li>
+					href="${pageContext.request.contextPath}/allProducts"
+					title="All products">Products</a>
+				<li><a href="${pageContext.request.contextPath}/contactUs"
+					title="Contact us">Contact Us</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+					href="${pageContext.request.contextPath}/userRegistration"
+					title="Registration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=allProducts"
+					title="Switch
+						to ${font} font">Switch to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=allProducts"
+					title="Switch
+						to ${contrast} contrast">Switch to
+						${contrast} contrast</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -53,7 +64,7 @@
 		<div class="container">
 			<div class="row double">
 				<div class="4u">
-					<div id="sidebar"  role="complementary">
+					<div id="sidebar" role="complementary">
 						<c:forEach var="i" items="${types}" varStatus="status">
 							<section>
 								<h3>
@@ -76,7 +87,8 @@
 											<div class="box post">
 												<a class="image left"
 													href="${pageContext.request.contextPath}/product?i=${status.index}"><img
-													src="<c:url value="/img/${i.imageURL}"/>" alt="Image of <c:out value="${i.prodName}"></c:out>" /></a>
+													src="<c:url value="/img/${i.imageURL}"/>"
+													alt="Image of <c:out value="${i.prodName}"></c:out>" /></a>
 												<div class="inner">
 													<h3>
 														<c:out value="${i.prodName}"></c:out>
@@ -87,7 +99,8 @@
 													</p>
 													<a
 														href="${pageContext.request.contextPath}/product?i=${status.index}">See
-														more details about <c:out value="${i.prodName}"></c:out></a>
+														more details about <c:out value="${i.prodName}"></c:out>
+													</a>
 												</div>
 
 											</div>
