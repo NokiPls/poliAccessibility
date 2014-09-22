@@ -66,6 +66,7 @@
 					</header>
 
 					<c:url var="url" value="/person" />
+					<div class="error">${error}</div>
 					<form:form action="login" method="post" modelAttribute="personForm">
 						<label for="userName">User Name:</label>
 						<form:input path="userName" placeholder="User Name"
@@ -73,9 +74,6 @@
 						<label for="passw">Password:</label>
 						<form:input type="password" placeholder="Password" path="passw"
 							required="true" id="passw" />
-
-						<div class="error">${error}</div>
-
 						<input type="submit" />
 					</form:form>
 
