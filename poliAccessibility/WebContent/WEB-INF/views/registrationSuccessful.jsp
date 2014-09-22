@@ -64,7 +64,6 @@
 			<section id="content" role="main">
 
 				<!-- Content -->
-
 				<article role=article>
 					<p>Congratulations, ${surname} ${name}, your registration has
 						been successful.</p>
