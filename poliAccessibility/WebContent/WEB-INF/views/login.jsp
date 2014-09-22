@@ -85,12 +85,17 @@
 	<!-- Footer -->
 
 	<div id="footer">
-		<footer class="copyright" role="contentinfo">
-
-			<h3>Accessibility project 2013/14</h3>
-
-		</footer>
+		<div class="container">
+			<div class="row ">
+				<div class="6u">
+					<div class="row collapse-at-2">
+						<section class="6u">
+							<h3>Accessibility project 2013/14</h3>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>

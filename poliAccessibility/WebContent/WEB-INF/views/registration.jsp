@@ -48,10 +48,7 @@
 
 	<!-- Header  ho modificato div in header e aggiunto il ruolo-->
 	<div id="header">
-		<h2>
-			<button class="btn">text size</button>
-			<button class="btn">High Contrast</button>
-		</h2>
+	
 		<!-- Logo  aggiunta nav-->
 		<header role="banner">
 
@@ -145,12 +142,17 @@
 	<!-- Footer -->
 
 	<div id="footer">
-		<footer class="copyright" role="contentinfo">
-
-			<h3>Accessibility Project 2013/14</h3>
-
-		</footer>
+		<div class="container">
+			<div class="row ">
+				<div class="6u">
+					<div class="row collapse-at-2">
+						<section class="6u">
+							<h3>Accessibility project 2013/14</h3>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>
