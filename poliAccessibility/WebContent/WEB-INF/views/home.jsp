@@ -48,6 +48,12 @@
 						Us</a></li>
 				<li><a
 					href="${pageContext.request.contextPath}/userRegistration">Registration</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchFont?font=${font}&page=home">Switch
+						to ${font} font</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/switchContrast?contrast=${contrast}&page=home">Switch
+						to ${contrast} contrast</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -86,15 +92,7 @@
 								<h2>Accessible E-commerce</h2>
 								<h3>Accessibility Project</h3>
 							</header>
-							<form:form action="switchFont" method="get">
-								<input class="hidden" name="page" value="home">
-								<input type="submit" name="font" value="Switch to ${font} font." />
-							</form:form>
-							<form:form action="switchContrast" method="get">
-								<input  class="hidden" name="page" value="home">
-								<input type="submit" name="contrast"
-									value="Switch to ${contrast} contrast." />
-							</form:form>
+
 							<span class="image featured"><img
 								src="<c:url value="/img/accessibility.jpg" />"
 								alt="Logo of the company." /></span>

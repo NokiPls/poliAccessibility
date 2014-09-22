@@ -364,7 +364,7 @@ public class HomeController {
 	public String switchFont(Model model,
 			@RequestParam(value = "font") String font,
 			@RequestParam(value = "page") String page) {
-		if (font.equals("Switch to normal font.")) {
+		if (font.equals("normal")) {
 			this.font = "high";
 			if (contrast.equals("normal")) {
 				this.css = "stylenh";
@@ -405,7 +405,7 @@ public class HomeController {
 	public String switchContrast(Model model,
 			@RequestParam(value = "contrast") String contrast,
 			@RequestParam(value = "page") String page) {
-		if (contrast.equals("Switch to normal contrast.")) {
+		if (contrast.equals("normal")) {
 			this.contrast = "high";
 			if (font.equals("normal")) {
 				this.css = "stylehn";
