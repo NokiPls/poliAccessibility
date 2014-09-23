@@ -419,12 +419,20 @@ ul.menu li:first-child {
 }
 
 /* Tables */
+table, th, td {
+   border: 1px solid black;
+   padding: 0.5em 1em 0.5em 1em;
+}
 table {
 	width: 100%;
+
 }
 
 table.default {
 	width: 100%;
+		 border: 2px solid black;
+  border-collapse: separate;
+  border-spacing: 5px;
 }
 
 table.default tbody tr {

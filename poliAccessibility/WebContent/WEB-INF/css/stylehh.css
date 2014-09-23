@@ -405,7 +405,10 @@
 		}
 
 /* Tables */
-
+table, th, td {
+   border: 2px solid yellow;
+   padding: 0.5em 1em 0.5em 1em;
+}
 	table {
 		width: 100%;
 	}
