@@ -82,6 +82,10 @@
 			font-style: normal;
 			font-weight: 300;
 		}
+h1 {
+		font-size: 1.3em;
+		letter-spacing: -0.025em;
+	}
 
 	h2 {
 		font-size: 2.5em;
