@@ -413,7 +413,6 @@ public class HomeController {
 		model.addAttribute("h", "Hearing and Speech");
 		model.addAttribute("type", type);
 		model.addAttribute("products", products);
-		model.addAttribute("currentAddress", currentUser.getAddress());
 		model.addAttribute("personForm", new Person());
 		return page;
 	}
