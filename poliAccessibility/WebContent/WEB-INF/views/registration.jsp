@@ -33,11 +33,11 @@
 	}
 
 	function checkUserName() {
-		var userN = document.getElementById("userName");
+		var userN = document.getElementById("UserName");
 		$.ajax({
 			url : 'checkUserName?userName=' + userN.value,
 			success : function(data) {
-				$('#username').html(data);
+				$('#usernameError').html(data);
 
 			}
 		})
@@ -124,7 +124,7 @@
 							title="The date should be in the format MM/YY with leading zeros where necessary"
 							required="true" value="${person.ccexp}" id="exp" />
 
-						<div id="usernameError" aria-live="polite" class="error">${userNameError}</div>
+						<div id="usernameError" aria-live="polite" class="error"></div>
 						<label for="Username">User Name:</label>
 						<form:input id="UserName" path="userName" placeholder="User Name"
 							onblur="checkUserName()" required="true"
