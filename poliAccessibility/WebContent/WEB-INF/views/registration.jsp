@@ -120,7 +120,7 @@
 						<div id="ccexpError" class="error">${ccexpError}</div>
 						<label for="exp">Cc expiration date:</label>
 						<form:input path="ccexp" placeholder="MM/YY Cc expiration date"
-							pattern="(0[1-9]|1[0-2])\/([1-9][1-9])"
+							pattern="(0[1-9]|1[0-2])\/([0-9][0-9])"
 							title="The date should be in the format MM/YY with leading zeros where necessary"
 							required="true" value="${person.ccexp}" id="exp" />
 
